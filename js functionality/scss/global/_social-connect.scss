@@ -1,0 +1,185 @@
+.social-connect
+{
+    background-image: url("../../images/connect-social-banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    min-height: calc((var(--vh, 1vh) * 100));
+    min-height: 900px;
+    background-position: top 90px center;
+    @include mq($until:desktopLarge)
+    {
+        background-position: top 75px center;
+    }
+    // background-position: center 30px;
+    // @include mq($from:widestIncld)
+    // {
+    //     background-position: 0 0;
+    // }
+    @include mq($until:desktop){
+        background-image: none;
+        min-height: auto;
+        padding-bottom: 0;
+    }
+    @include mq($until:tablet)
+    {
+        padding-top: 60px;
+    }
+    h2
+    {
+        margin-bottom: 20px;
+        @include mq($until:tablet)
+        {
+            &.hero-text 
+            {
+                font-size: 32px;
+            }
+        }
+    }
+    .social-content
+    {
+        max-width: 650px;
+        margin-top: 60px;
+        @include mq($until:desktop)
+        {
+            margin-top: 0;
+            padding-bottom: 20px;
+        }
+        @include mq($until:tablet)
+        {
+            max-width: 350px;
+        }
+        @include mq($until:mobileSmall)
+        {
+            padding-bottom: 0;
+        }
+        p
+        {
+            font-size: 20px;
+            line-height: 28px;
+            margin-bottom: 20px;
+            @include mq($until:desktop)
+            {
+                font-size: 18px;
+                line-height: 25px;
+            }
+            @include mq($until:tablet)
+            {
+                font-size: 16px;
+                line-height: 22px;
+            }
+        }
+        .social-links
+        {
+            @include flex;
+            gap:27px;
+            font-size: 20px;
+            line-height: 35px;
+            line-height: 1;
+            @include mq($until:desktop)
+            {
+                gap: 22px;
+            }
+            @include mq($until:tablet)
+            {
+                font-size: 16px;
+                gap:20px;
+            }
+            @include mq($until:mobileSmall)
+            {
+                gap: 12px;
+                @include  flex-direction-column;
+            }
+            a{
+                @include flex;
+                @include align-center;
+                gap: 16px;
+                @include mq($until:tablet)
+                {
+                    gap: 10px;
+                }
+            }
+            i
+            {
+                font-size: 27px;
+                @include mq($until:tablet)
+                {
+                   
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .input-container
+        {
+            width: 335px;
+            margin-right: 20px;
+            margin-bottom: 0;
+            text-align: left;
+            input
+            {
+                padding: 8px 20px 5px 50px;
+            }
+            label
+            {
+                left: 50px;
+                opacity: 0.6;
+                pointer-events: none;
+            }
+            @include mq($until:tablet)
+            {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            i
+            {
+                position: absolute;
+                left: 20px;
+                font-size: 20px;
+                top: 16px;
+            }
+        }
+        .social-content
+        {
+            .btn
+            {
+                width: 165px;
+            }
+            h3
+            {
+                @include mq($until:tablet)
+                {
+                    font-size: 24px;
+                    margin-bottom: 10px !important;
+                }
+            }
+            .subscribe-form
+            {
+                @include mq($until:tablet)
+                {
+                   display: block;
+                   text-align: center;
+                }
+            }
+        }
+}
+.social-banner-img{
+    img{
+        display: block;
+        width: 100%;
+    }
+    @include mq($until:tablet)
+    {
+        height: 512px;
+        img{
+            object-position: bottom;
+            object-fit: cover;
+            height: 100%;
+            object-position: 62%;
+        }
+    }
+    @include mq($until:mobileSmall)
+    {
+        height: 440px;
+    }
+}

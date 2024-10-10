@@ -1,0 +1,153 @@
+@import '../global/variables';
+@import '../global/mixin';
+@import '../global/mq';
+@import '../global/team-box';
+@import '../global/tabs';
+@import '../global/social-connect';
+
+
+
+
+.hero-section
+{
+    margin-top: -233px;
+    @include mq($until: wide) {
+        margin-top:-190px
+    }
+    @include mq($until: desktop) {
+        margin-top:-150px
+    }
+   @include mq($until: tablet) {
+        padding-top:0;
+        margin-top: -90px;
+    }
+    .hero-text
+    {
+        margin-top:280px;
+        @include mq($until: wide) {
+            margin-top:230px
+        }
+        @include mq($until: desktop) {
+            margin-top:180px
+        }
+        @include mq($until: tablet) {
+            margin-top:0;
+        }
+        .subtext{
+            display: block;
+            a{
+                border-bottom: 1px solid;
+            }
+        }
+    }
+    +section
+    {
+        margin-top: -40px;
+        @include mq($until:wide){
+           // margin-top: -43px;
+        }
+        @include mq($until:desktop){
+           // margin-top: -43px;
+        }
+       @include mq($until: tablet) {
+            margin-top:0;
+        }
+    }
+    .hero-image
+    {    
+       @include mq($until: tablet) {
+        order: -1;
+        margin-top: 0;
+        }
+        .hero-img
+        {
+            @include mq($from:wide)
+            {
+                left: 70%;
+            }
+        }
+    }
+   .divider{
+        border-bottom: 1px solid #00000033;
+        width: 295px;
+        max-width: 100%;
+        margin: 30px 0;
+        display: block;
+   }
+}
+.meet-other-doctors{
+    @include mq($until: tablet) {
+        @include linear-gradient(359.28deg, rgba(255, 255, 255, 0.7) 34.6%, rgba(255, 255, 255, 0) 104.02%);
+    }
+    .white-card{
+        h2{
+            margin-bottom: 16px;
+        }
+        p{
+            font-size: 20px;
+            line-height: 28px;
+            @include mq($until: desktop) {
+            font-size: 18px;
+            line-height: 25px;
+            }
+        }
+    }
+    .dr-written-articles-section{
+        padding-bottom: 80px;
+        @include mq($until: tablet) {
+            padding-bottom: 40px;
+        }
+    }
+    .our-policy-content {
+        @include mq($until: tablet) {
+            width: 100%;
+            @include flex-none;
+        }
+    }
+    .written-articles {
+        @include mq($until: tablet) {
+            width: 100%;
+            @include flex-none;
+        }
+        .tabs-nav{
+            &.tab-lg{
+                > li{
+                padding: 9px 19px;
+                @include mq($until:tablet) {
+                    padding: 8px 16px;  
+                }
+                }
+            }
+        }
+    .card-box{
+        color:$-secondary;
+        display: block;
+        margin-bottom: 10px;
+        &:last-child{margin-bottom: 0;}
+        h5, .h5{
+            margin-bottom: 16px;
+        }
+        p{
+            font-size: 18px;
+            line-height: 25px;
+            margin-bottom: 16px;
+        }
+    }
+    }
+    .team-wrapper {
+        margin-top:75px;
+        gap: 60px 20px;
+       @include mq($until: tablet) {
+            margin-top: 55px;
+        }
+    }
+    .white-card{
+        margin-bottom: 0;
+    //    @include mq($until: tablet) {
+    //         padding: 0;
+    //         border-radius: 0;
+    //         border: 0;
+    //         background: transparent;
+    //     }
+    }
+}

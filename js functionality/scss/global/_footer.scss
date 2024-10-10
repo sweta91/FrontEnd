@@ -1,0 +1,183 @@
+footer{
+ background-color: $-gray-6;
+ padding: 82px 0 114px;
+ color:$-gray-2;
+ position: relative;
+ @include mq($until: tablet) {
+   padding: 80px 0;
+ }
+ .container{
+    gap:80px;
+    @include mq($until: tablet) {
+      gap:60px;
+    }
+ }
+ a{
+   color:$-gray-2;
+   &:hover{
+      color:$-primary;
+   }
+ }
+ .footer-brand-logo{
+   svg, img{
+      display: block;
+      //width: 175px;
+   }
+ }
+
+ .footer-address{
+   gap: 20px;
+   @include mq($until: tablet) {
+      @include flex-wrap;
+      gap: 40px;
+   }
+   .address{
+      opacity: 0.6;
+      color:$-white;
+      font-size: 14px;
+      line-height: 21px;
+      P:not(:last-child){
+         margin-bottom: 8px;
+      }
+      @include mq($until: tablet) {
+         font-size: 12px;
+         line-height: 19px;
+         -webkit-box-ordinal-group: 2;
+          -ms-flex-order: 1; 
+          order: 1;
+      }
+   }
+   .foot-logos {
+      @include mq($from: tablet) {
+         @include justify-flex-end;
+      }
+      .registered-pharmacy-logo{
+         @include mq($until: tablet) {
+            -webkit-box-ordinal-group:0;
+            -ms-flex-order:-1;
+            order:-1;
+         }
+      }
+   }
+ }
+ .footer-menu{
+   @include mq($until: tablet) {
+      border-top: 1px solid $-gray-5;
+   }
+   .accordion-block{
+      border: 0;
+    }
+    .footer-col{
+      @include col;
+      @include mq($until: tablet) {
+         border-bottom: 1px solid $-gray-5;
+      }
+      .footer-menu-title{
+         color:$-primary;
+         font-size: 20px;
+         line-height: 24px;
+         padding: 16px 0;
+         @include mq($from: tablet) {
+            padding: 0;
+            pointer-events: none;
+         }
+         @include mq($until: tablet) {
+            &:after {
+               @include mq($until: tablet) {
+                  content: "";
+                  width: 10px;
+                  height: 10px;
+                  border: 2px solid $-primary;
+                  border-top-width: 0;
+                  border-left-width: 0;
+                  @include transform(scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(45deg) translate3d(0px, 0px, 0px) skew(0deg, 0deg));
+                  @include transition ( 0.2s linear);
+                  position: absolute;
+                  top: 20px;
+                  right: 16px;
+               }
+         }
+            &.t-open{
+                  &:after {
+                     @include transform(scale3d(1, 1, 1) rotateX(180deg) rotateY(0deg) rotateZ(45deg) translate3d(0px, 0px, 0px) skew(0deg, 0deg));
+                  }
+            }
+         }
+      }
+       .footer-menu-accordion{
+         margin-bottom: 0;
+         margin-top: 8px;
+         padding-bottom: 24px;
+         @include mq($from: tablet) {
+            margin-top: 24px;
+            padding-bottom: 0;
+            display: block !important;
+            height: auto !important;
+         }
+         .contact-info{
+            list-style: none;
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 20px;
+            li{
+               @include mq($until: tablet) {
+                  margin-bottom: 5px;
+               }
+              a{
+               padding-bottom: 3px;
+               line-height: 124%;
+               padding-top: 3px;
+              }
+            }
+         }
+         .social-icons{
+            margin-bottom: 0;
+            list-style: none;
+            padding: 0;
+            margin-top: 0;
+            li{
+               &:not(:last-child){
+                  margin-bottom: 7px;
+               }
+               i{
+                  color:$-gray-2;
+                  margin-right: 12px;
+               }
+            }
+            
+         }
+         .menu-item{
+            .menu-link{
+               margin-bottom: 8px;
+               // @include flex;
+               // @include align-start;
+               color: $-gray-2;
+               i{
+                  font-size: 20px;
+                  margin-right: 8px;
+                  //color:$-gray-2;
+                  color:$-gray-4;
+                  margin-top: 2px;
+                 // @include transition(all 0.3s ease-in-out);
+               }
+               &:hover{
+                  color: $-primary;
+                  // i{
+                  //    color:$-primary;
+                  // }
+               }
+            }
+            &:last-child{
+               .menu-link{
+                  margin-bottom: 0;
+               }
+            }
+         }
+       }
+    }
+    
+    
+ }
+
+}
+

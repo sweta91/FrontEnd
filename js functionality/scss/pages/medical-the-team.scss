@@ -1,0 +1,71 @@
+@import '../global/variables';
+@import '../global/mixin';
+@import '../global/mq';
+@import '../global/gray-to-white-card-section';
+@import '../global/team-box';
+@import '../global/tabs';
+
+
+
+
+.hero-section
+{
+    +section
+    {
+        margin-top: -210px;
+        @include mq($until:wide){
+            margin-top: -160px;
+        }
+        @include mq($until:desktop){
+            margin-top: -130px;
+        }
+        @include mq($until:tablet){
+            margin-top: -128px;
+        }
+    }
+    .hero-image
+    {    
+        @include mq($until:tablet)
+        {
+            margin-top: -30px;
+        }
+        .hero-img
+        {
+            @include mq($from:wide){
+                left: 70%;
+            }
+        }
+    }
+   
+}
+
+.join-our-team-section{
+    height: 100vh;
+    max-height: 900px;
+    @include flex;
+    background-image: url('../../images/join-our-team-banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include mq($until:desktop)
+    {
+    background-position: center right 20%;
+    min-height: 812px;
+    max-height: 812px;
+    }
+    .join-our-team{
+        height: 100%;
+        @include flex;
+        padding: 80px 40px;
+        @include backdrop-filter(blur(3px));
+        border: 1px solid #e1e1e1;
+        border-bottom: 0;
+        .join-our-team-content{
+            max-width: 600px;
+            margin: auto;
+        }
+    }
+    .font-15px{
+        line-height: 21px;
+    }
+}

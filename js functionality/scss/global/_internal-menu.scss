@@ -1,0 +1,357 @@
+
+.link-nav-wrapper {
+    position: relative;
+    z-index: 9;
+    @include transition(all 0.3s ease-in-out);
+    padding: 20px 0;
+    @include mq($until:tablet)
+    {
+      padding: 0;
+    }
+   .position-relative{
+    padding: 0 32px;
+  
+    @include mq($until:tablet)
+    {
+      padding: 0;
+      @include transition(all 0.3s ease);
+    }
+    
+  }
+   .link-title
+   {
+    width: calc(100% + 40px);
+    border-bottom: 1px solid #D4D4D6;
+    padding: 16px 0;
+    background: $-white;
+    position: relative;
+    background: #fff;
+    margin: 10px -20px 40px;
+    cursor: pointer;
+    display: none;
+   
+     @include mq($until:tablet)
+     {
+       p
+       {
+         width: 100%;
+         @include flex;
+         @include justify-space-between;
+         @include align-center;
+         padding: 0 0 0 20px;
+       }
+      
+     }
+   }
+    &.stick
+    {
+       position: sticky;
+       width: 100%;
+       top: 0;
+      // left: 0;
+      background-color: #fff;
+      padding: 0;
+      @include box-shadow(0px 35px 77px 0px rgba(0,0,0,0.101961));
+      .link-nav{
+        @include box-shadow(none);
+        border-radius: 0 0 20px 20px;
+      }
+      @include mq($until:tablet)
+      {
+        border-bottom: 1px solid #D4D4D6;
+        .link-title
+        {
+          padding: 0;
+          border-bottom: 0;
+          margin: 0;
+          display: block;
+          &.open
+          {
+           // background: $-white;
+           // position: relative;
+            padding: 16px 0;
+            i
+            {
+              &::before
+              {
+                content: "\e911";
+              }
+            }
+           + .position-relative
+           {
+             max-height: 300px;
+             overflow: auto;
+             height: auto;
+             @include scrollbar;
+             @include box-shadow(0px 100px 77px 0px #0000001A);
+             border-radius: 0 0 10px 10px;
+           }
+          
+           
+          }
+        }
+        .visible-links
+        {
+          &.open
+          {
+            opacity: 1;
+            visibility: visible;
+            @include box-shadow(0px 8px 12px 0px #74420233);
+          }
+        }
+      }
+      @include mq($until:mobileLarge)
+      {
+        top:-1px;
+      }
+      
+        .hide
+        {
+            display: block !important;
+            .logo-sm
+            {
+               // padding: 10px;
+               @include mq($until:tablet)
+              {
+                padding-top: 10px;
+              }
+            }
+            .btn
+            {
+              padding: 10px 22px;
+            }
+            &.consultation-cta
+            {
+              @include mq($until:desktop)
+              {
+                display: none !important;
+              }
+            }
+        }
+
+    }
+    .position-relative
+    {
+      @include mq($until:tablet)
+      {
+        position: absolute;
+        top: 57px;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        height: 0;
+      }
+      @include mq($until:mobileLarge)
+      {
+        top:57px;
+      }
+    }
+
+}
+.link-nav {
+    background-color: $-white;
+    border-radius: 20px;
+   
+    @include box-shadow(0px 35px 77px 0px #0000001A);
+    @include flex;
+    @include align-center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    @include mq($until:tablet)
+    {
+        padding: 0;
+        @include box-shadow(none);
+        background: transparent;
+        border-radius: 0;
+        
+    }
+
+   
+    button {
+      position: absolute;
+      height: 100%;
+      right: 0px;
+      padding: 0 15px;
+      border: 0;
+      outline: none;
+      color: $-secondary;
+      cursor: pointer;
+      &.btn-q-class
+      {
+        @include mq($until:tablet)
+        {
+          display: none ;
+        }
+      }
+      
+      &:hover::after {
+        transform: scale(1.075);
+      }
+    }
+    
+    .hamburger {
+      position: relative;
+      margin: auto;
+      
+    }
+    
+    .visible-links {
+      display: inline-table;
+      margin-bottom: 0;
+    
+      @include mq($until:tablet)
+      {
+        width: 100%;
+        visibility: hidden;
+        opacity: 0;
+        background: $-white;
+       @include transition(all 0.3s ease);
+ 
+      }
+      li
+      {
+        display: table-cell;
+          padding: 0 30px;
+          position: relative;
+          @include mq($until:tablet)
+          {
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid $-gray-1;
+            padding: 0;
+          }
+          &::after
+          {
+              content: "";
+              position: absolute;
+              right: 0;
+              top: 50%;
+              @include transform(translateY(-50%));
+              width: 1px;
+              height: 14px;
+              background: $-gray-4;
+              @include mq($until:tablet)
+              {
+                display: none;
+              }
+              
+          }
+          &:first-child
+          {
+              padding-left: 0;
+            
+          }
+          &:last-child
+          {
+              padding-right: 0;
+              &::after
+              {
+                  display: none;
+              }
+              
+          }
+         
+          a
+          {
+              padding: 30px 0;
+              font-size: 20px;
+              line-height: 28px;
+              position: relative;
+              color:$-secondary;
+              white-space: nowrap;
+              i
+              {
+                display: none;
+                @include mq($until:tablet)
+                {
+                  display: block;
+                }
+              }
+            
+              @include mq($until:tablet)
+              {
+                padding: 15px 25px;
+                width: 100%;
+                @include flex;
+                @include justify-space-between;
+                @include align-center;
+              }
+              &:after
+              {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  @include transform(scaleX(0));
+                  border-radius: 5px;
+                  height: 2px;
+                  bottom: 0;
+                  left: 0;
+                  background: $-primary;
+                  transform-origin: bottom right;
+                  @include transition(transform 0.25s ease-out);
+                  @include mq($until:tablet)
+                  {
+                    display: none;
+                  }
+              } 
+             &.active
+              {
+                  &:after
+                  {
+                      @include transform(scaleX(1));
+                      transform-origin: bottom left;
+                  }
+                  @include mq($until:tablet)
+                  {
+                    color: $-light-brown;
+                  }
+                  i
+                  {
+                    @include mq($until:tablet)
+                    {
+                      &::before
+                      {
+                        content: "\e90c";
+                      }
+                    }
+                  }
+              }
+          }
+      }
+    }
+    
+    .hidden-links {
+      position: absolute;
+      right: 25px;
+      top: 100%;
+      margin-bottom: 0;
+     visibility: visible;
+     opacity: 1;
+      background-color: $-white;
+      @include transition(all 0.3s ease-in-out);
+      @include mq($until:tablet)
+      {
+          width: 100%;
+      }
+      li {
+        display: block;
+        border-top: 1px solid $-gray-1;
+        a
+        {
+          border-radius: 0;
+          padding: 20px;
+          i
+          {
+            display: none;
+          }
+        }
+      }
+    }
+    
+    .hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }

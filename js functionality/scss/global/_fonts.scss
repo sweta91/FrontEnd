@@ -1,0 +1,29 @@
+$fontPath: "../fonts";
+
+@font-face {
+    font-family: 'FTRegolaNeueMedium';
+//     src: url('#{$fontPath}/FTRegolaNeue-Medium.woff2') format('woff2'), 
+//          url('#{$fontPath}/FTRegolaNeue-Medium.woff') format('woff');
+    src: url('#{$fontPath}/FTRegolaNeue-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'FTRegolaNeueBold';
+//     src: url('#{$fontPath}/FTRegolaNeue-Bold.woff2') format('woff2'),
+//          url('#{$fontPath}/FTRegolaNeue-Bold.woff') format('woff');
+    src: url('#{$fontPath}/FTRegolaNeue-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+     font-family: 'FTRegolaNeueRegular';
+     // src: url('#{$fontPath}/FTRegolaNeue-Regular.woff2') format('woff2'),
+     //      url('#{$fontPath}/FTRegolaNeue-Regular.woff') format('woff');
+     src: url('#{$fontPath}/FTRegolaNeue-Regular.woff2') format('woff2');
+     font-weight: normal;
+     font-style: normal;
+     font-display: swap;
+ }

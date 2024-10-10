@@ -1,0 +1,43 @@
+
+.switch input {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  /**
+   * 1. Adjust this to size
+   */
+  
+  .switch {
+    display: inline-block;
+    font-size: 20px; /* 1 */
+    height: 1em;
+    width: 1.8em;
+    background: rgba($-secondary, 0.2);
+    border-radius: 1em;
+    &.active
+    {
+      background: $-secondary;
+      div
+      {
+        opacity: 0.9;
+      }
+    }
+  }
+  
+  .switch div {
+    height: 0.8em;
+    width: 0.8em;
+    border-radius: 1em;
+    background: #FFF;
+    @include box-shadow(0 0.1em 0.3em rgba(0,0,0,0.3));
+    @include transition(all 300ms);
+    position: relative;
+    top:2px;
+    left: 2px;
+  }
+  
+  .switch input:checked + div {
+      @include transform(translate3d(100%, 0, 0));
+  }
+  

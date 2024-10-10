@@ -1,0 +1,105 @@
+.star-rating{
+    @include flex;
+    @include align-center;
+}
+.review-rate{
+    @include flex;
+    &.star-orange{
+        .star:after{
+            background: url('../../images/star-solid-orange-half.svg') no-repeat !important;
+        }
+    }
+    .star {
+        width:36px;
+        height: 36px;
+        display: inline-block;
+        position: relative;
+        color: #cccccd;
+        line-height: 80%;
+        margin-right: 3px;
+        &:last-child{
+            margin-right: 0;
+        }
+        z-index: 1;
+        &::before {
+            content: "";
+            background: url('../../images/star-solid-white.svg') no-repeat;
+            background-size: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        &:after {
+            content: "";
+            background: url('../../images/star-solid-orange_half.svg') no-repeat;
+            background-size: 100%;
+            color: $-primary;
+            position: absolute;
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+            display: none;
+            height: 100%;
+        }
+    }
+    $stars: (
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "1-5": 1,
+    "2-5": 2,
+    "3-5": 3,
+    "4-5": 4,
+    );
+    @each $name, $val in $stars {
+        &.star-#{$name} {
+            .star {
+                &:nth-child(-n + #{$val}) {
+                    &::before {
+                        background: url('../../images/star-solid-orange.svg') no-repeat;
+                        background-size: 100%;
+                    }
+                    
+                }
+            }
+            &.star-orange{
+                .star {
+                    &:nth-child(-n + #{$val}) {
+                        &::before {
+                            background: url('../../images/star-solid-orange.svg') no-repeat;
+                        }
+                        
+                    }
+                }
+            }
+            // &.star-secondary{
+            //     .star {
+            //         &:nth-child(-n + #{$val}) {
+            //             color: rgba($-secondary, 0.5);
+            //         }
+            //     }
+            // }
+        }
+    }
+    $stars-half: (
+    "1-5": 2,
+    "2-5": 3,
+    "3-5": 4,
+    "4-5": 5,
+    ); 
+    @each $name, $val in $stars-half {
+        &.star-#{$name} {
+            .star {
+                &:nth-child(#{$val}):after { 
+                    display: block; 
+                }
+            }
+        }
+
+    }
+}
+

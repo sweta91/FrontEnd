@@ -1,0 +1,113 @@
+
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container label{
+	position:absolute;
+	top:15px;
+	left:24px;
+	font-size:16px;
+	color:$-gray;	
+	@include transition(all 0.3s ease-in-out);
+  @include fontRegular;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 150%;
+    @include mq($until:tablet)
+    {
+      font-size: 14px;
+    }
+}
+.input-container input{ 
+  width:100%;
+  padding:8px 20px 5px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  @include box-shadow(0px 4px 50px rgba(0, 0, 0, 0.05));
+  border-radius: 8px;
+  border:0;
+  height: 56px;
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border: 1.5px solid #252E34;
+}
+.input-container input:focus ~ label,
+ .input-container input:not(:placeholder-shown) ~ label{
+	top:5px;
+	font-size:12px;
+}
+  @include mq($from:mobileLarge){
+    .sm\:w-half {
+      width: 50%;
+    }
+  }
+// ************************Hide Place Holder******************
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+   color: transparent;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+   color: transparent;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+   color: transparent;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+   color: transparent;
+}
+input:focus::placeholder {
+  color: transparent;
+}
+
+textarea
+{
+  &::-webkit-input-placeholder {
+    /* WebKit browsers */
+     color: rgba($-secondary,0.6);
+     font-size: 14px;
+  }
+  &::-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: rgba($-secondary,0.6);
+    font-size: 14px;
+  }
+  &::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+     color: rgba($-secondary,0.6);
+     font-size: 14px;
+  }
+  &::-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: rgba($-secondary,0.6);
+    font-size: 14px;
+  }
+}
+.eased-textarea
+{
+    background: rgba(255, 255, 255, 0.8);
+    @include box-shadow(0px 4px 50px rgba(0, 0, 0, 0.05));
+    border-radius: 10px;
+    width: 100%;
+    border: 0;
+    padding: 20px;
+    color: $-gray-5;
+    outline:1px solid transparent !important;
+    @include scrollbar;
+    &:focus
+    {
+        outline:1px solid #252E34 !important;
+    }
+    &::placeholder
+    {
+      font-size: 16px;
+    }
+}
+textarea::-webkit-input-placeholder {
+  color: rgba($-secondary,0.6);
+  font-size: 14px;
+}

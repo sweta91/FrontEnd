@@ -1,0 +1,326 @@
+@import '../global/variables';
+@import '../global/mixin';
+@import '../global/mq';
+@import '../global/internal-menu';
+@import '../global/partners-in-health';
+@import '../global/icon-card-list';
+@import '../global/right-side-img';
+@import '../global/adhd-insights';
+@import '../global/dr-video';
+@import '../global/reviewed-written-block';
+@import '../global/review-star';
+@import '../global/customer-review-slider';
+
+
+.hero-section{
+    margin-top: -130px;
+    @include mq($until:wide){
+        margin-top: -110px;
+    }
+    @include mq($until:desktop){
+        margin-top: -100px;
+    }
+    @include mq($until:tablet){
+        padding-top: 5px;
+        margin-top: 0;
+    }
+    + section{
+        margin-top: -100px;
+        @include mq($until:wide){
+            margin-top: -20px;
+        }
+        @include mq($until:desktop){
+            margin-top: 00px;
+            padding-top: 60px;
+        }
+    }
+
+    .hero-text
+    {
+        padding-right: 0;
+        @include mq($until:wide)
+        {
+         padding-right: 20px;
+        }
+        @include mq($until:desktop)
+        {
+         padding-top: 70px;
+        }
+        @include mq($until: tablet) {
+            padding-top: 0;
+            margin-top: -70px;
+            padding-right: 0;
+        }
+        h1
+        {
+            @include mq($until: tablet) {
+                font-size: 32px;
+                line-height: 40px;
+            }
+        }
+        .subtext
+        {
+            margin: 20px 0;
+            @include mq($until: desktop) {
+                margin: 10px 0;
+            }
+            @include mq($until: tablet) {
+                margin: 0;
+            }
+        }
+        .btn
+        {
+            margin: 20px 0;
+            max-width: 307px;
+            width: 100%;
+            @include mq($until: tablet) {
+                margin: 10px 0 30px;
+            }
+        }
+        .star-rating{
+            @include mq($until: tablet) {
+                .rated-text{
+                    font-size: 18px;
+                }
+                .star{
+                    width: 26px;
+                    height: 26px;
+                    margin-right: 2px;
+                }
+                .review-text{
+                    font-size: 16px;
+                }
+            }
+            @include mq($until: mobileSmall) {
+                .review-text{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .hero-image
+    {
+        @include mq($until:tablet){
+            order: -1;
+            margin-top: 0;
+        }
+        .hero-img
+        {
+            width: 892px;
+            height: 892px;
+            left: 68%;
+            @include mq($until:wide){
+                width: 800px;
+                height: 800px;
+            }
+            @include mq($until:desktop){
+                width: 600px;
+                height: 600px;
+                left: 51%;
+            }
+            @include mq($until:tablet){
+                width:564px;
+                height: 564px;
+                margin-top: -60px;
+            }
+        }
+        .btn
+        {
+            margin: 20px 0;
+        }
+    }
+    
+    .registered-pharmacy
+    {
+        text-align: center;
+        padding:14px;
+        border-radius: 20px;
+        background-color: rgba($-white,0.8);
+        @include linear-gradient(112.34deg, rgba(249, 244, 241, 0.7) 62.6%, rgba(249, 244, 241, 0) 103.64%);
+        width: 240px;
+        position: absolute;
+        bottom: 200px;
+        left: 68%;
+        @include transform(translateX(-50%));
+        @include backdrop-filter(blur(2px));
+        z-index: 1;
+        @include mq($until:wide){
+            bottom: 170px; 
+            left: 68%;
+        }
+        @include mq($until:desktop){
+            bottom: 125px;
+            left: 50%;
+        }
+        @include mq($until: tablet) {
+            position: static;
+            @include transform(none);
+            margin: 0 auto;
+        }
+        img{
+            max-width: 103px;
+            //max-height: 34px;
+        }
+        p
+        {
+            margin-bottom: 10px;
+            font-size: 12px;
+            line-height: 124%;
+        }
+       
+    }
+}
+
+.list
+{
+    margin: 20px 0;
+    li
+    {
+        font-size: 20px;
+        line-height: 141%;
+        margin:12px 0 0;
+        @include flex;
+        @include align-start;
+        @include mq($until: desktopLarge) {
+            font-size: 18px;
+        }
+        @include mq($until: tablet) {
+            font-size: 16px;
+        }
+        [class^="icon-"], [class*=" icon-"]
+        {
+            font-size: 24px;
+            margin-right: 5px;
+            margin-top: 3px;
+            @include mq($until: tablet) {
+                font-size: 22px;
+                margin-top: 0;
+            }
+        }
+    }
+}
+//********************** what-is-adhd ******************
+.what-is-adhd{
+    padding:80px 0;
+    .what-is-adhd-title{
+        margin-bottom: 48px;
+    }
+    @include mq($until: desktop) {
+        padding:60px 0;
+        .what-is-adhd-title{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+//********************** Trusted source list ******************
+.trusted-source-list{
+    ol{
+        color:$-gray-4;
+        padding-left: 15px;
+        list-style: decimal;
+        margin-bottom: 0;
+        li{
+            font-size: 15px;
+            line-height: 20.7px;
+            margin-bottom: 20px;
+            &::marker{
+                font-weight: bold;
+                @include fontBold;
+            }
+            a{
+                color:$-gray-4;
+            }
+        }
+    }
+}
+//left text - right image section
+.left-right-div{
+    clear: both;
+    overflow: auto;
+    @include mq($until:desktop){
+        @include flex;
+        @include flex-wrap;
+    }
+    .card-icon-list{
+        margin-right: 20px;
+        float: left;
+        width: calc(100% - 390px);
+        @include mq($until:tabletLandscape){
+            width: calc(100% - 340px);
+        }
+        @include mq($until:desktop){
+            float: none;
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 40px;
+        }
+    }
+    .dr-video{
+        margin-bottom: 20px;
+        @include mq($until:desktop){
+            order: -1;
+        }
+    }
+    .dr-video, .reviewed-written-block{
+        float: left;
+        width: 370px;
+        @include mq($until:tabletLandscape){
+            width: 320px;
+        }
+        @include mq($until:desktop){
+            float: none;
+            width: 100%;
+        }
+    }
+}
+
+//accordian section
+.card-icon-list{
+    &.accordion-container{
+        .card-icon{
+            &.accordion-block{
+                display: block;
+                border:0;
+                padding: 20px;
+                @include mq($until:tablet){
+                    padding: 16px;
+                    img, svg{
+                        width: 33px;
+                    }
+                }
+                .custom-accordion-title{
+                    padding: 0;
+                    h5, .h5{
+                        margin-bottom: 0;
+                    }
+                    .icon{
+                        @include mq($until:tablet){
+                            top:0;
+                        }
+                    }
+                }
+                .custom-accordion-content{
+                    padding-left: 76px;
+                    @include mq($until:tablet){
+                        padding-left: 0;
+                        padding-top:16px;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+
+.partners-in-health, .adhd-insights{
+    background-color: $-white;
+}
+
+
+#how-we-source-info-modal{
+    .btn-close{
+        max-width: 320px;
+    }
+}

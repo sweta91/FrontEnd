@@ -1,0 +1,12 @@
+<svg width="80" height="81" viewBox="0 0 80 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M69 15.2529C69 10.8347 65.4183 7.25293 61 7.25293H19C14.5817 7.25293 11 10.8347 11 15.2529V66.2529C11 70.6712 14.5817 74.2529 19 74.2529H61C65.4183 74.2529 69 70.6712 69 66.2529V15.2529Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9097 70.5086C13.3678 72.4686 15.7018 73.7382 18.3324 73.7382H60.6476C65.0659 73.7382 68.6476 70.1565 68.6476 65.7382V15.6093C68.6476 15.1576 68.6106 14.7158 68.5395 14.2864L11.9097 70.5086Z" fill="#F7C171"/>
+<path d="M69 14.7915C69 10.3732 65.4183 6.7915 61 6.7915H19C14.5817 6.7915 11 10.3732 11 14.7915V65.7146C11 70.1329 14.5817 73.7146 19 73.7146H61C65.4183 73.7146 69 70.1329 69 65.7146V14.7915Z" stroke="#1E2020" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M37 22.2529H31V16.2529H25V22.2529H19V28.2529H25V34.2529H31V28.2529H37V22.2529Z" fill="#F7C171"/>
+<path d="M23 52.5225H56.4615" stroke="#1E2020" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M23 42.5222H56.4615" stroke="#1E2020" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M23 60.3301H47.5385" stroke="#1E2020" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M43 20.3301H56.5385" stroke="#1E2020" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M43 29.3301H56.5385" stroke="#1E2020" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M37 24.2529C37 23.1484 36.1046 22.2529 35 22.2529H33C31.8954 22.2529 31 21.3575 31 20.2529V18.2529C31 17.1484 30.1046 16.2529 29 16.2529H27C25.8954 16.2529 25 17.1484 25 18.2529V20.2529C25 21.3575 24.1046 22.2529 23 22.2529H21C19.8954 22.2529 19 23.1484 19 24.2529V26.2529C19 27.3575 19.8954 28.2529 21 28.2529H23C24.1046 28.2529 25 29.1484 25 30.2529V32.2529C25 33.3575 25.8954 34.2529 27 34.2529H29C30.1046 34.2529 31 33.3575 31 32.2529V30.2529C31 29.1484 31.8954 28.2529 33 28.2529H35C36.1046 28.2529 37 27.3575 37 26.2529V24.2529Z" stroke="#1E2020" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

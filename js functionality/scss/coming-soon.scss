@@ -1,0 +1,642 @@
+@import 'global/variables';
+@import 'global/mixin';
+@import 'global/mq';
+@import 'global/reset';
+@import 'global/icon-fonts';
+@import 'global/fonts';
+@import 'global/utilities';
+@import 'global/responsive';
+@import 'global/button';
+@import 'global/textbox';
+@import 'global/checkbox';
+//@import 'global/header';
+@import 'global/main';
+
+//@import 'global/variables';
+//@import 'global/mixin';
+//@import 'global/mq';
+//@import 'global/fonts';
+//@import 'global/reset';
+//@import 'global/button';
+//@import 'global/utilities';
+
+//@import 'global/header';
+@import 'global/hero-banner';
+
+* {
+    outline: none !important;
+}
+
+* {
+    box-sizing: border-box;
+
+    &::after {
+        box-sizing: border-box;
+    }
+
+    &::before {
+        box-sizing: border-box;
+    }
+}
+
+body {
+    @include fontRegular;
+    font-size: 18px;
+    overflow-x: hidden;
+    line-height: 142%;
+    color: $-gray;
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+   // background: $-body-bg;
+    @include scrollbar;
+    background-color: $-gray-1;
+    // background-color: tint($-primary-10, 60%);
+}
+a {
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    color: $-gray;
+    cursor: pointer;
+    @include transition(all 0.3s ease-in-out);
+    &:hover{
+        color:$-primary;
+    }
+}
+
+button{
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    color:$-secondary;
+    @include transition(all 0.3s ease-in-out);
+    &:hover{
+        color:$-primary;
+    }
+}
+span, [class^="icon-"], [class*=" icon-"] {
+    vertical-align: middle;
+}
+
+.container {
+    width: 100%;
+    max-width: 1340px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0 auto;
+
+    @include mq($until: tablet) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+.fluid{
+    max-width: 1340px;
+    margin: auto;
+}
+
+.row {
+    @include flex;
+    @include flex-wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.row {
+    .col {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+body {
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
+        @include fontBold;
+        line-height: 124%;
+    }
+    h1, .h1 {
+        line-height: 124%;
+        @include fluid-type($min_width, $max_width, 30px, 56px);
+        &.hero-text{
+            @include fluid-type($min_width, $max_width, 24px, 52px);
+        }
+    }
+
+    h2, .h2 {
+         @include fluid-type($min_width, $max_width, 28px, 40px);
+         &.hero-text{
+            @include fluid-type($min_width, $max_width, 24px, 52px);
+        }
+    }
+
+    h3, .h3 {
+        @include fluid-type($min_width, $max_width, 26px, 32px);
+        
+    }
+
+    h4, .h4 {
+        @include fluid-type($min_width, $max_width, 24px, 28px);
+    }
+
+    h5, .h5 {
+        @include fluid-type($min_width, $max_width, 20px, 24px);
+    }
+
+    h6, .h6 {
+        @include fluid-type($min_width, $max_width, 18px, 20px);
+    }
+ 
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.section-gapping{
+    padding: 120px 0 120px;
+    @include mq($until:desktopLarge)
+    {
+        padding: 100px 0 100px;
+    }
+    @include mq($until:desktop)
+    {
+        padding: 80px 0 80px;
+    }
+}
+
+.main
+{
+    position: relative;
+}
+.main-header{
+    background-color: transparent;
+    padding:29px 0;
+    position: relative;
+    width:100%;
+    left: 0;
+    top:0;
+    z-index: 100;
+    @include mq($until: wide){
+        padding:20px 0;
+    }
+    @include mq($until: tablet)
+    {
+      //  padding: 17px 0;
+        padding: 15px 0;
+    }
+    .logo
+    {
+        text-align: center;
+        img,svg
+        {
+            width: 180px;
+            @include mq($until: tablet) {
+               // width: 110px;
+                //width: 60%;
+                width: 150px;
+            }
+        }
+    }
+}
+
+
+// ***************** focused-consultations *****************
+.focused-consultations
+{
+    // padding-bottom: 100px;
+ // position: relative;
+  margin-top:-150px;
+    @include mq($until: desktop)
+    {
+        margin-top:-50px
+    }
+    @include mq($until: tablet)
+    {
+       // margin-top:0px
+    }
+    h2 
+    {
+        margin-bottom: 10px;
+        @include mq($until:tablet)
+        {
+            font-size: 24px;
+        }
+    }
+    .consultation-box
+    {
+        h4, .h4
+        {
+            @include mq($until:desktop){
+                font-size: 23px;
+            }
+            @include mq($until:tablet)
+            {
+                font-size: 20px;
+            }
+        }
+    }
+    ul
+    {
+        margin-bottom: 0;
+        li
+        {
+           display: block;
+        
+           border-bottom: 1px solid $-gray-3;
+           padding: 20px 0;
+           @include mq($until:tablet)
+            {
+                padding: 15px 0;
+            }
+           p
+           {
+            text-align: left;
+            width: 49%;
+            display: inline-block;
+            &:last-child{
+                @include inline-flex;
+            }
+            @include mq($until:tablet)
+            {
+                // text-indent: -41px;
+                // padding-left: 41px;
+                line-height: 18px;
+            }
+            span
+            {
+                font-size: 14px;
+            }
+            b
+            {
+                font-size: 18px;
+                text-align: left;
+                @include fontSemiBold;
+                line-height: 128%;
+                @include mq($until:desktop)
+                {
+                    font-size: 15px;
+                }
+            }
+            i
+            {
+                color:$-primary;
+                padding-right:15px;
+                top: 4px;
+                position: relative;
+                @include mq($until:desktop){
+                    padding-right:10px;
+                }
+                @include mq($until:tablet){
+                    top:1px;
+                }
+                &.icon-cross
+                {
+                    color: $-secondary;
+                    font-weight: bold;
+                }
+            }
+           }
+           &:last-child
+           {
+            border-bottom: 0;
+            padding-bottom: 0;
+           }
+          
+        }
+    }
+    .with-us
+    {
+        width: calc(50% - 10px);
+        margin-bottom: 30px;
+      //  margin-right: 30px;
+        @include mq($until:desktop){
+            width: calc(47% - 10px);
+        }
+        @include mq($until:tablet)
+        {
+            width: 100%;
+            margin-bottom: 0;
+        }
+        .consultation-box
+        {
+            @include box-shadow(0px 5px 24px 0px rgba(0, 0, 0, 0.15));
+            background-color: $-white;
+            border:2px solid $-primary;
+            border-radius: 12px;
+            padding: 22px;
+            //min-height: 455px;
+            height: 100%;
+            @include mq($until:tablet)
+            {
+                padding: 20px;
+            }
+           
+            .logo
+            {
+                width: 150px;
+                @include mq($until:tablet){
+                    width: 125px;
+                }
+            }
+        }
+        
+    }
+    
+    .without-us
+    {
+        width: 50%;
+        margin-bottom: 30px;
+        @include mq($until:desktop){
+            width: 53%;
+        }
+        @include mq($until:tablet)
+        {
+            width: 100%;
+           // margin-bottom: 40px;
+            .gap-5{
+                gap:10px;
+            }
+        }
+        h4, .h4
+        {
+            margin-bottom: 0;
+        }
+        .text-line-through
+        {
+            text-decoration: line-through;
+        }
+        .consultation-box
+        {
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), linear-gradient(0deg, rgba(235, 235, 235, 0.2), rgba(235, 235, 235, 0.2));
+            border: 1px solid $-gray-2;
+            padding: 22px;
+           
+            width: calc(50% - 5px);
+            border-radius: 12px;
+           
+            @include mq($until:tablet)
+            {
+                padding: 20px;
+                width: 100%;
+            }
+          
+            ul
+            {
+                li
+                {
+                    display: block;
+                    padding: 10px 5px;
+                    @include mq($until:tablet){
+                        @include flex;
+                        padding: 15px 0;
+                    }
+                    p
+                    {
+                        display: block;
+                        width: 100%;
+                        span
+                        {
+                            color: $-gray-4;
+                        }
+                        &:last-child{
+                            @include flex;
+                        }
+                    }
+                    &:last-child
+                    {
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// **************** Form Wrapper***********
+.form-section
+{
+    position: relative;
+  //  top:-150px;
+    @include mq($until: desktop)
+    {
+        //top:-50px
+    }
+    @include mq($until: tablet)
+    {
+       // top:0px
+    }
+    h2
+    {
+        @include mq($until:tablet)
+        {
+            font-size: 24px;
+        }
+    }
+}
+.Form-wrapper
+{
+    
+    margin: 0 auto;
+    
+    .form-group
+    {
+        max-width: 996px;
+        margin: 40px auto 5px;
+        @include flex;
+        @include justify-space-between;
+        .input-container
+        {
+            width: 100%;
+            margin-right: 20px;
+            margin-bottom: 0;
+            text-align: left;
+            input
+            {
+                padding: 8px 20px 5px 50px;
+            }
+            label
+            {
+                left: 50px;
+                opacity: 0.6;
+                pointer-events: none;
+            }
+            @include mq($until:tablet)
+            {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            i
+            {
+                position: absolute;
+                left: 20px;
+                font-size: 20px;
+                top: 16px;
+            }
+        }
+        .btn
+        {
+            width: 100%;
+            max-width: 300px;
+            display: inline-block;
+            border-radius: 100px;
+            padding: 15px !important;
+            &.disable
+            {
+                opacity: 0.5;
+                cursor:not-allowed;
+            }
+        }
+    }
+.control-group
+{
+    max-width: 996px;
+}
+    .control--checkbox
+    {
+        background: transparent;
+        @include box-shadow(none);
+        font-size: 14px;
+        max-width: 589px;
+        position: relative;
+        left: -10px;
+    }
+}
+
+// ********************* Thank you page***************
+.thank-you-page
+{
+    min-height: calc(100vh - 101px);
+    min-height: calc((var(--vh, 1vh) * 100) - 101px);
+    @include mq($until: wide){
+        min-height: calc(100vh - 83px);
+        min-height: calc((var(--vh, 1vh) * 100) - 83px);
+    }
+    @include mq($until: tablet)
+    {
+        min-height: calc(100vh - 68px);
+        min-height: calc((var(--vh, 1vh) * 100) - 68px);
+    }
+    img{
+        width: 101px;
+    }
+    .link-btn
+    {
+        margin: 50px 0 0;
+        text-decoration: underline;
+        @include mq($until: desktop){
+            margin: 40px 0 0; 
+        }
+        i
+        {
+           @include transform(rotate(180deg));
+            display: inline-block;
+            padding-left: 5px;
+        }
+    }
+    h2, .h2
+    {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        @include mq($until:tablet)
+        {
+            margin-bottom: 16px;
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+    p
+    {
+        font-size: 24px;
+        line-height: 34.08px;
+        @include mq($until:tablet)
+        {
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+}
+.rings-bg
+{
+    position: relative;
+    overflow: hidden;
+   // height: 100vh;
+    // @include mq($until:tablet)
+    // {
+    //     height: inherit;
+    // }
+    &::after
+    {
+        content: "";
+        background: url('../images/halo-rings.png') no-repeat;
+        height: 100%;
+        width: 100%;
+        // right: -75%;
+        // bottom: -45%;
+        right: -78%;
+        bottom: -46%;
+        position: absolute;
+        background-size: contain;
+        z-index: -1;
+        @include mq($until:wide)
+        {
+        right: -68%;
+        bottom: -50%;
+        }
+        @include mq($until:desktopLarge)
+        {
+            right: -65%;
+            bottom: -50%;
+        }
+        @include mq($until:desktop)
+        {
+            right: -52%;
+            bottom: -51%;
+        }
+        @include mq($until:tablet)
+        {
+            right: -45%;
+            bottom: -71%;
+        }
+    }
+}
+
+.sticky-button
+{
+    display: none; 
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1000; 
+    width: 100%; 
+    padding: 20px 0 30px;
+    background-color: $-white;
+    text-align: center;
+    @include mq($from:tablet){
+        display: none !important;
+    }
+    .btn
+    {
+        width: 100%;
+        max-width: 300px;
+        display: inline-block;
+    }
+    p
+    {
+        margin-bottom: 20px;
+    }
+    h2
+    {
+        margin-bottom: 20px;
+        font-size: 20px;
+        @include fontBold;
+        line-height: 25px;
+    }
+    @include mq($until:tablet){
+       
+          // display: block;
+        
+       }
+}

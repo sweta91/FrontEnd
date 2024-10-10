@@ -1,0 +1,155 @@
+.FAQ-section
+{
+    position: relative;
+    .white-shadow
+    {
+        position: relative;
+        @include mq($until: tablet )
+        {
+           margin: 0 -20px;
+           padding: 20px !important;
+        }
+    }
+    .container
+    {
+        position: relative;
+    }
+    .faq-list
+    {   
+        @include flex;
+        @include flex-wrap;
+        gap: 0 20px;
+        margin-top:40px;
+        @include mq($until: desktop )
+        {
+            margin-top:30px;
+        }
+        .faq-card
+        {
+            background: $-white;
+            @include box-shadow(0px 2px 6px 0px #473B6133);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            flex: 0 0 auto;
+            width: calc(50% - 10px);
+            @include flex;
+            @include mq($until:desktop)
+            {
+                width: 100%;
+                margin-bottom: 14px;
+            }
+            .faq-text
+            {
+                padding: 15px;
+                @include flex;
+                @include justify-space-between;
+                @include align-center;
+                width: 100%;
+                cursor: pointer;
+                margin-bottom: 0;
+                font-size: 18px;
+                line-height: 142%;
+                @include fontSemiBold;
+            }
+            i
+            {
+                background: $-gray-1;
+                border-radius: 50%;
+                height: 24px;
+                width: 24px;
+                min-width: 24px;
+                @include flex;
+                @include justify-center;
+                @include align-center;
+                font-size: 18px;
+                margin-left: 10px;
+            }
+        }
+
+        //   ************************
+       .faq-expand
+       {
+        position: absolute;
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+        z-index: 4;
+        top: 0;
+        left: 0;
+        border-radius: 12px;
+        height: 0;
+        overflow: hidden;
+        @include transition(height 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out);
+        opacity: 0;
+        visibility: hidden;
+        @include box-shadow(0px 4px 50px 0px #0000000F);
+        display: -ms-flexbox !important;
+        display: flex !important;
+        @include flex-direction-column;
+        @include mq($until:tablet)
+        {
+            position: fixed;
+            z-index: 9;
+        }
+        h4, .h4
+        {
+            width: 90%;
+        }
+        .content
+        {
+            @include scrollbar;
+            overflow: auto;
+            padding-right: 15px;
+            // font-size: 20px;
+            // line-height: 28px;
+            // @include mq($until:tablet){
+            //     font-size: 18px;
+            //     line-height: 22px;
+            // }
+           *:last-child{
+             margin-bottom: 0;
+            }
+            ul
+            {
+                list-style: disc;
+                padding-left: 20px;
+                margin-top: 20px;
+                li
+                {
+                    margin-bottom: 5px;
+                }
+            }
+            ol
+            {
+                margin-top: 20px;
+                padding-left: 20px;
+                list-style: decimal;
+            }
+        }
+        p
+        {
+            margin-bottom: 20px;
+        }
+        .close
+        {
+            position: absolute;
+            right: 15px;
+            top:15px;
+            font-size: 20px;
+            color:$-secondary;
+            @include transition(none);
+            i{
+                margin-left: 0;
+            }
+        }
+        &.show
+        {
+            height: 100%;
+            padding: 20px;
+            opacity: 1;
+            visibility:visible;
+        }
+       }
+    }
+}

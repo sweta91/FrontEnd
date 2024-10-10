@@ -1,0 +1,537 @@
+.modal-open {
+    overflow: hidden !important;
+    height: auto !important;
+    padding-right: 5px !important;
+    .fullpage-wrapper{
+        position: unset !important;
+        height: auto !important;
+    }
+}
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    opacity: 0;
+    @include transition (all 0.3s ease-in-out);
+    .modal-close-btn,.popup-close-btn {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    font-size: 24px;
+    padding: 7px 8px;
+    cursor: pointer;
+    // width: 40px;
+    // height: 40px;
+    z-index: 1;
+    line-height: 24px;
+    // @media only screen and (min-device-width: 393px) and (max-device-width: 851px) and (orientation: landscape) {
+    //     top: 10px;
+    //     right: 10px;
+    //     background: transparent;
+    // }
+
+    // @media (min-width: 48em) and (max-width: 64em) and (orientation: landscape) {
+    //     top: 10px;
+    //     right: 10px;
+    //     background: transparent;
+    // }
+    }
+    .modal-dialog{
+        position: relative;
+        width: auto;
+        margin: 10px auto;
+        @include flex;
+        @include align-center;
+       // @include justify-center;
+      // transform: translateY(-30px);
+       // height: 100%;
+        // z-index: 6;
+        @include transition (all 0.3s ease-in-out);
+        min-height: calc(100% - 20px);
+        @include mq($until: tablet) {
+            margin: 20px auto 0;
+        }
+    }
+    .modal-content{
+        margin: 0 auto;
+        background: #eeeeee;
+        @include box-shadow(0 3px 10px rgba(0,0,0,0.3));
+        z-index: 150;
+        position: relative;
+        border-radius: 14px;
+        outline: 0;
+        padding: 20px;
+        max-width: 600px;
+        width: 100%;
+        @include mq($until: tablet) {
+            margin-top: auto;
+            border-radius: 14px 14px 0 0;
+        }
+        a{
+            text-decoration: underline;
+        }
+    }
+    &.in{
+        opacity: 1;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: auto;
+        @include scrollbar;
+    }
+    .modal-header{
+        padding:20px 20px;
+        @include mq($from: tablet) {
+            padding:20px 30px;
+        }
+        .modal-title{
+            margin: 0;
+            font-size: 20px;
+            @include fontBold;
+            display: inline-block;
+        }
+        .sub-title{
+            color: rgba($-primary, .8);
+            font-size: 14px;
+            position: relative;
+            margin: 0 0 0 0px;
+            @include fontRegular;
+            display: inline-block;
+        }
+        @include transition (all 0.3s ease-in-out);
+        &.sticky{
+            @include box-shadow (0px 2.5px 15px rgba($-primary, .07));
+        }
+    }
+    &.drawer{
+        font-size: 16px;
+        line-height: 150%;
+        @include mq($from: tablet) {
+            font-size: 20px;
+        }
+        @include mq($until: tablet) {
+            font-size: 16px;
+            line-height: 136%;
+        }
+        .modal-body{
+            padding:20px;
+            // min-height: 100vh;
+            // min-height: calc(var(--vh, 1vh) * 100);
+            overflow:auto;
+            height: calc(100vh - 50px);
+            height: calc((var(--vh,1vh) * 100) - 50px);
+            @include scrollbar;
+            @include mq($from: tablet) {
+                padding:20px 30px;
+            }
+
+        }
+        .modal-close-btn {
+            top: 12px;
+            background: none;
+        
+            @media only screen and (min-device-width: 393px) and (max-device-width: 851px) and (orientation: landscape) {
+              top: 10px;
+              right: 10px;
+              background: transparent;
+            }
+        
+            @media (min-width: 48em) and (max-width: 64em) and (orientation: landscape) {
+              top: 10px;
+              right: 10px;
+              background: transparent;
+            }
+          }
+        .modal-dialog{
+            margin: 0px;
+            @include transform(translateX(200px));
+            
+        }
+        .modal-content{
+            margin: 0 0 0 auto;
+            border-radius: 0px;
+            outline: 0;
+            padding: 0px;
+            width: 100%;
+            max-width: 600px;
+           // height: calc(var(--vh, 1vh) * 100);
+            @include flex;
+            @include flex-direction-column;
+            min-height: 100vh;
+          //  overflow: auto;
+           @include scrollbar;
+            @include mq($from: tablet) {
+                max-width: 960px;
+            }
+        }
+        p{
+            margin: 0 0 15px;
+            @include mq($from: tablet) {
+                font-size: 20px;
+            } 
+        }
+        // a{
+        //     border-bottom: 1px solid;
+        // }
+        ul{
+            li{
+                list-style: disc;
+                margin-bottom: 10px;
+                line-height: 22px;
+            }
+            
+        }
+        &.in{
+            .modal-dialog{
+                @include transform(translateX(0px));
+                @supports (-webkit-touch-callout: none) {
+                  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+                    //padding-top: 60px;
+                  }
+                }
+            }
+        }
+        .custom-accordion-content{
+            padding-bottom: 20px;
+        }
+    }
+    &.prompt{
+        .modal-dialog{
+            @include mq($until: mobileLarge) {
+                @include align-end;
+                margin:0;
+                @include transform (translateY(20%));
+            }
+           .modal-content{
+               padding: 20px 10px 20px 20px;
+                @include mq($until: mobileLarge) {
+                    border-radius: 14px 14px 0 0;
+                }
+           }
+           .modal-body{
+               height: 100%;
+               overflow: auto;
+               max-height: calc(100vh - 140px);
+               @include scrollbar;
+               @media only screen and (min-width: 393px) and (max-width: 1200px) and (orientation: landscape) {
+                max-height: calc(100vh - 100px);
+               }
+           }
+           .popup-content{
+                padding-right: 10px;
+                height: 100%;
+                overflow: auto;
+           }
+        }
+        &.in {
+            .modal-dialog{
+                opacity: 1;
+                 @include transform (translateY(0px));
+             }
+         }
+        
+    }
+    &.light-box{
+        .modal-body{
+            padding:0;
+        }
+        .modal-dialog{
+            margin-top: 90px;
+            min-height: calc(100% - 100px);
+            @include mq($until: tablet) {
+                margin-top: 100px;
+            }
+        }
+        .modal-content{
+            border-radius: 0px;
+            outline: 0;
+            padding: 0px;
+            max-width: max-content;
+        }
+        iframe{
+            width: 700px;
+            height: 400px;
+            max-width: 100%;
+            max-height: 100%;
+            margin-bottom: -6px;
+        }
+        .modal-close-btn,.popup-close-btn {
+            border-radius: 50%;
+            background: $-white;
+            right: 3px;
+            top: inherit;
+            bottom: 104%;
+            &::before, &::after{
+                // background: white !important;
+                left: 8px;
+            }
+          }
+    }
+
+    h2{
+        font-size: 26px;
+        @include fontRegular;
+        margin: 0 0 20px;
+        line-height: 130%;
+        @include mq($from: tablet) {
+            font-size: 36px;
+        }
+    }
+    h3{
+        font-size: 20px;
+    }
+    h3, h4, h5{
+        margin: 20px 0;
+    }
+    
+}
+
+ 
+.modal-overlay
+{
+ &::before
+ {
+     content: "";
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     width: 100%;
+     min-height: 100vh;
+     min-height: calc(var(--vh, 1vh) * 100);
+     z-index: 0;
+     background-color: rgba(black, .6);
+     visibility: visible;
+     opacity: 1;
+ }
+}
+.overlay {
+    //display: none;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    // width: 100%;
+    // height: 100%;
+    // background: $-primary;
+    // z-index: 555;
+    // opacity: .8;
+  }
+  
+.close-btn{
+cursor: pointer;
+padding: 5px;
+width: 40px;
+height: 40px;
+position: relative;
+&::before, &::after{
+    content: "";
+    width: 25px;
+    height: 2px;
+    background: rgba($-secondary, 1);
+    border-radius:4px ;
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    left: 7px;
+    @include transition (all 0.3s ease-in-out);
+}
+&::before{
+    @include transform (rotate(45deg));
+}
+&::after{
+    @include transform (rotate(-45deg));
+}
+}
+.back-btn{
+cursor: pointer;
+padding: 5px;
+width: 40px;
+height: 40px;
+position: relative;
+&::before{
+    content: "";
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba($-primary, 1);
+    border-top: 0;
+    border-right: 0;
+    position: absolute;
+    top: 13px;
+    left: 12px;
+    @include transition (all 0.3s ease-in-out);
+}
+&::after{
+    content: "";
+    width: 22px;
+    height: 2px;
+    background: rgba($-primary, 1);;
+    position: absolute;
+    top: 19px;
+    left: 10px;
+}
+&::before{
+    @include transform (rotate(45deg));
+}
+}
+
+// ***********************Modal content width***************
+.modal10 
+{
+    .modal 
+    {
+        .modal-content
+        {
+            max-width: 10%;
+        }
+    }
+}
+.modal20 
+{
+    .modal 
+    {
+        .modal-content
+        {
+            max-width: 20%;
+        }
+    }
+}
+.modal30 
+{
+    .modal 
+    {
+        .modal-content
+        {
+            max-width: 30%;
+        }
+    }
+}
+.modal40 
+{
+    .modal 
+    {
+        .modal-content
+        {
+            max-width: 40%;
+        }
+    }
+}
+.modal50 
+{
+    .modal 
+    {
+        .modal-content
+        {
+            max-width: 50%;
+        }
+    }
+}
+.modal60 
+{
+    .modal 
+    {
+        .modal-content
+        {
+            max-width: 60%;
+        }
+    }
+}
+.modal70 
+{
+    .modal 
+    {
+        .modal-content
+        {
+            max-width: 70%;
+        }
+    }
+}
+.modal80 
+{
+    .modal 
+    {
+        .modal-content
+        {
+            max-width: 80%;
+        }
+    }
+}
+.modal90 
+{
+    .modal 
+    {
+        .modal-content
+        {
+            max-width: 90%;
+        }
+    }
+}
+.modal100 
+{
+    .modal 
+    {
+        .modal-content
+        {
+            max-width: 100%;
+        }
+    }
+}
+:root {
+    --loader-width: 300px;
+  }
+.loader-container {
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 100%;
+    background-color: #e2ded9;
+  }
+  .bar {
+    position: relative;
+    width: 80%;
+    height:  0.5rem;
+    margin-bottom:  0.5rem;
+    overflow: hidden;
+    border-radius: 1000px;
+    background-color: #b3b3b3;
+  }
+  .bar:last-child {
+    margin-bottom: 0;
+  }
+  .bar:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 6rem;
+    top: 0;
+    animation: load 1s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  .bar-2 {
+    width: 55%;
+  }
+  .bar-3 {
+    width: 77%;
+  }
+  @keyframes load {
+    from {
+      left: -100px;
+    }
+    to {
+      left: 100%;
+    }
+  }

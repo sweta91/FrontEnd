@@ -1,0 +1,331 @@
+.main-header{
+    background-color: transparent;
+    padding:29px 0;
+    position: relative;
+    width:100%;
+    left: 0;
+    top:0;
+    z-index: 100;
+    @include mq($until: wide){
+        padding:20px 0;
+    }
+    @include mq($until: tablet)
+    {
+      //  padding: 17px 0;
+        padding: 15px 0;
+    }
+    .logo
+    {
+        text-align: center;
+        img,svg
+        {
+            width: 181px;
+            @include mq($until: tablet) {
+               // width: 110px;
+                //width: 60%;
+                width: 150px;
+            }
+        }
+    }
+    .sign-in
+    {
+        min-width: 110px;
+        @include mq($until:tablet)
+        {
+            min-width: auto;
+        }
+        i
+        {
+            font-size: 24px;
+        }
+        span
+        {
+            @include mq($until: tablet) {
+                display: none;
+            }
+        }
+    }
+    .menu {
+        @include transition(all 0.3s ease-in-out);
+        z-index: 101;
+        @include flex;
+        @include mq($until:tablet)
+        {
+            font-size: 0;
+        }
+        span {
+            
+            height: 3px;
+            width: 25px;
+            background-color: $-secondary;
+            @include transform(translate(-50%,-50%));
+            @include transition(all 0.3s ease-in-out);
+            position: relative;
+            top: 18px;
+            left: 15px;
+            margin-right: 15px;
+            &::before
+            {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: 0;
+                background-color: $-secondary;
+                height: 3px;
+                width: 25px;
+                @include transition(all 0.3s ease-in-out);
+            }
+           
+           }
+         &:hover
+         {
+            span
+            {
+                background-color: $-primary;
+                &::before
+                {
+                    background-color: $-primary;
+                }
+            }
+         }
+    }
+    .navbar-menu {
+    background-color: $-white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 640px;
+    @include transform(translateX(-100%));
+    @include transition (all .3s ease-in-out);
+    padding: 0 50px;
+    border-radius: 0 20px 20px 0;
+    overflow-x: hidden;
+    @include flex;
+    @include flex-direction-column;
+    z-index: 102;
+    // &::before
+    // {
+    //     content: "";
+    //     background: url("../images/halo-rings.png") no-repeat;
+    //     background-position: right;
+    //     background-size: contain;
+    //     width: 100%;
+    //     display: inline-block;
+    //     height: 50%;
+    //     opacity: 0.3;
+    //     right: -50%;
+    //     position: fixed;
+    //     top: 0;
+    //     z-index: 0;
+    // }
+    @include mq($until:tablet)
+    {
+        padding: 0 20px 0;
+        width: 90%;
+        max-width: 335px;
+    }
+    .menu-ring-bg{
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+
+        @include mq($until:tablet)
+        {
+        right: -20px;
+        width: 150px;
+        }
+    }
+    .close-menu-div{
+        padding: 44px 30px 20px;
+        @include mq($until:tablet)
+        {
+            padding:20px 0;
+        }
+    }
+    .close-menu
+    {
+        @include fontSemiBold;
+        i
+        {
+            position: relative;
+            top: -2px;
+            font-size: 24px;
+        }
+    }
+    &.active
+    {
+        @include transform(translateX(0)); 
+        @include transition(all 0.3s ease-in-out);
+    }
+    .menu-listing { 
+        padding: 0 30px; 
+        margin: 0; 
+        text-align: left; 
+        padding-bottom: 40px;
+        width: 100%;
+        @include mq($until:tablet)
+        {
+            padding: 0;
+        }
+        @include fontSemiBold;
+        li
+        {
+            display: block;
+            a {
+                color: $-secondary;
+                @include flex;
+                @include justify-space-between;
+                @include align-center;
+                font-size: 24px;
+                line-height: 34.08px;
+                padding: 10px 0;
+                @include transition (all .3s ease-in-out);
+                @include mq($until:tablet)
+                {
+                    font-size: 18px;
+                    line-height: 25px;
+                    padding: 8px 0;
+                    line-height: inherit;
+                }
+                &:hover,&.active
+                {
+                    color: $-primary;
+                }
+                i{
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    .header-bottom-block
+    {
+        margin-top: auto;
+    }
+    .adhd-header-block
+    {
+        padding: 20px;
+        border-radius: 20px;
+        background-color: $-white;
+        @include box-shadow(0px 14px 32px 0px rgba(32, 32, 32, 0.1), 0px 57px 57px 0px rgba(32, 32, 32, 0.09), 0px 229px 92px 0px rgba(32, 32, 32, 0.01));
+        margin: 56px 0 64px;    
+        @include flex;
+        @include justify-space-between;
+        @include align-center;
+        @include mq($until:tablet)
+        {
+            display: block;
+            text-align: left;
+            margin: 20px 0 30px;    
+        }
+        .image-block
+        {
+            img{
+                min-width: 171px;
+            }
+            @include mq($until:tablet)
+            {
+                text-align: center;
+                img
+                {
+                    min-width: auto;
+                    width: 131px;
+                }
+            }
+        }
+        .text-block
+        {
+            margin-left: 32px;
+            @include mq($until:tablet)
+            {
+                margin-left: 0;
+            }
+            h5, .h5
+            {
+                margin-bottom:10px;
+                @include mq($until:tablet)
+                {
+                    font-size: 20px;
+                }
+            }
+            p
+            {
+                margin-bottom: 20px;
+                @include mq($until:tablet)
+                {
+                    font-size: 15px;
+                }
+            }
+        }
+        .btn
+        {
+            @include mq($until:tablet)
+            {
+                font-size: 15px;
+                padding: 16px 24px;
+                width: 100%;
+            }
+        }
+    }
+    .social-icons
+    {
+        @include flex;
+        @include justify-space-between;
+        margin-bottom: 56px;
+        @include mq($until:tablet)
+        {
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 35px;
+        }
+        a
+        {
+            font-size: 18px;
+            @include fontRegular;
+            @include mq($until:tablet)
+            {
+                margin: 0 15px;
+            }
+            i
+            {
+                padding-right: 12px;
+                font-size: 24px;
+                @include mq($until:tablet)
+                {
+                    padding-right: 0;
+                }
+            }
+            span
+            {
+                @include mq($until:tablet)
+                {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    }
+    
+    &.overlay
+    {
+        &:before
+        {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 0;
+            background-color: rgba($-gray-5, 0.4);
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

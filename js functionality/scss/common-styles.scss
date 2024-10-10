@@ -1,0 +1,177 @@
+@import 'global/variables';
+@import 'global/mixin';
+@import 'global/mq';
+@import 'global/fonts';
+@import 'global/reset';
+@import 'global/button';
+@import 'global/utilities';
+
+@import 'global/header';
+@import 'global/hero-banner';
+
+* {
+    outline: none !important;
+}
+
+* {
+    box-sizing: border-box;
+
+    &::after {
+        box-sizing: border-box;
+    }
+
+    &::before {
+        box-sizing: border-box;
+    }
+}
+
+body {
+    @include fontRegular;
+    font-size: 18px;
+    overflow-x: hidden;
+    line-height: 142%;
+    color: $-gray;
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+   // background: $-body-bg;
+    @include scrollbar;
+    background-color: $-gray-1;
+    // background-color: tint($-primary-10, 60%);
+}
+a {
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    color: $-gray;
+    cursor: pointer;
+    @include transition(all 0.3s ease-in-out);
+    &:hover{
+        color:$-primary;
+    }
+}
+
+button{
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    color:$-secondary;
+    @include transition(all 0.3s ease-in-out);
+    &:hover{
+        color:$-primary;
+    }
+}
+span, [class^="icon-"], [class*=" icon-"] {
+    vertical-align: middle;
+}
+
+.container {
+    width: 100%;
+    max-width: 1340px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0 auto;
+
+    @include mq($until: tablet) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+.fluid{
+    max-width: 1340px;
+    margin: auto;
+}
+
+.row {
+    @include flex;
+    @include flex-wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.row {
+    .col {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+body {
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
+        @include fontBold;
+        line-height: 124%;
+    }
+    h1, .h1 {
+        line-height: 124%;
+        @include fluid-type($min_width, $max_width, 30px, 56px);
+        &.hero-text{
+            @include fluid-type($min_width, $max_width, 24px, 52px);
+        }
+    }
+
+    h2, .h2 {
+         @include fluid-type($min_width, $max_width, 28px, 40px);
+         &.hero-text{
+            @include fluid-type($min_width, $max_width, 24px, 52px);
+        }
+    }
+
+    h3, .h3 {
+        @include fluid-type($min_width, $max_width, 26px, 32px);
+        
+    }
+
+    h4, .h4 {
+        @include fluid-type($min_width, $max_width, 24px, 28px);
+    }
+
+    h5, .h5 {
+        @include fluid-type($min_width, $max_width, 20px, 24px);
+    }
+
+    h6, .h6 {
+        @include fluid-type($min_width, $max_width, 18px, 20px);
+    }
+ 
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.section-gapping{
+    padding: 120px 0 120px;
+    @include mq($until:desktopLarge)
+    {
+        padding: 100px 0 100px;
+    }
+    @include mq($until:desktop)
+    {
+        padding: 80px 0 80px;
+    }
+}
+.floting-btn{
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    padding: 20px 14px;
+    background-color: $-white;
+    @include box-shadow(0px -2px 6.7px 0px #3926091A);
+    text-align: center;
+    @include transition(all 0.3s ease);
+    display: none;
+    z-index: 9;
+    @include mq($until:desktop){
+        display: block;
+    }
+    &.in{
+        bottom: 0;
+    }
+    .btn{
+        max-width: 307px;
+        width: 100%;
+    }
+}

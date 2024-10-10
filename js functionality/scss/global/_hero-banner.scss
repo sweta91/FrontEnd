@@ -1,0 +1,99 @@
+.hero-section{
+    overflow-x: hidden;
+    margin-top: -243px;
+    @include mq($until:wide){
+        margin-top: -150px;
+    }
+    @include mq($until:desktop){
+        margin-top: -110px;
+    }
+    @include mq($until:tablet){
+        padding-top: 20px;
+        margin-top: 0;
+    }
+    .hero-text
+    {    position: relative;
+        z-index: 1;
+        @include col;
+        max-width: 610px;
+        padding-right: 20px;
+        @include mq($until: tablet) {
+            padding-right: 0;
+            max-width: 100%;
+        }
+        h1{
+            margin:0 0 20px;
+            @include mq($until: desktop) {
+                font-size: 36px;
+                line-height: 44.64px;
+                margin:0 0 16px;
+            }
+        }
+        .subtext
+        {
+            font-size: 22px;
+            line-height: 141%;
+            margin: 0 0 20px;
+            display: inline-block;
+            @include mq($until: desktop) {
+                font-size: 20px;
+                margin: 0 0 10px;
+            }
+            @include mq($until: tablet) {
+                margin: 0;
+                font-size: 18px;
+            }
+        }
+    }
+    .hero-image{
+        width: 44%;
+        position: relative;
+      //  z-index: 0;
+        @include mq($until:tablet){
+            margin-top: -50px;
+        }
+        .hero-img{
+            position: relative;
+            @include transform(translateX(-50%));
+            left: 52%;
+            max-width: unset;
+            width: 1191px;
+            height: 1191px;
+        }
+        @include mq($until:wide){
+            .hero-img{
+                position: relative;
+                width: 900px;
+                height: 900px;
+            }
+        }
+        @include mq($until:desktop){
+            width: 42%;
+            .hero-img{
+                width: 700px;
+                height: 700px;
+            }
+        }
+        @include mq($until:tablet){
+            width: 100%;
+            .hero-img{
+                width:564px;
+                height: 564px;
+                left: 50%;
+            }
+        }
+    }
+    + section{
+        margin-top: -250px;
+        position: relative;
+        @include mq($until:wide){
+            margin-top: -140px;
+        }
+        @include mq($until:desktop){
+            margin-top: -100px;
+        }
+        @include mq($until:tablet){
+            margin-top: -90px;
+        }
+    }
+}

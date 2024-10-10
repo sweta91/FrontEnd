@@ -1,0 +1,122 @@
+.adhd-insights
+{
+    background-color: $-gray-2;
+  //padding-bottom: 50px;
+    .insight-wrapper
+    {
+        margin-top: 60px;
+        @include flex;
+        @include flex-wrap;
+        @include justify-center;
+        margin-left: -10px;
+        margin-right: -10px;
+        @include mq($until:desktop)
+        {
+            margin-top: 40px;
+           // display: block;
+        }
+       
+            .insight-box
+            {
+                flex: 0 0 33.33%;
+                max-width: calc(33.33% - 20px);
+                border-radius: 12px;
+                overflow: hidden;
+                margin: 0 10px;
+                position: relative;
+                background-color: $-gray-3;
+                @include transition(all 0.3s ease-in-out);
+               
+                &:hover{
+                    @include box-shadow(0px 6px 8px 0px rgba(46,46,46,0.2));
+                }
+                @include mq($until:desktop)
+                {
+                    flex: 0 0 50%;
+                    max-width: calc(50% - 20px);
+                    margin: 0 10px 20px;
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: top;
+                    min-height: 510px;
+                }
+                @include mq($until:tablet)
+                {
+                    max-width: 355px;
+                    flex: 0 0 100%;
+                    min-height: auto;
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+                img
+                {
+                    width: 100%;
+                    display: block;
+                }
+                .insight-content
+                {
+                    @include linear-gradient(180deg, rgba(38, 38, 38, 0) 0%, #ECECEC 51.5%);
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    padding: 20px;
+                    padding-top: 80px;
+                    .label
+                    {
+                        margin: 0;
+                        font-size: 15px;
+                        padding: 3px 16px;
+                    }
+                    h5, .h5
+                    {
+                        margin: 10px 0;
+                        a
+                        {
+                            font-size: 24px;
+                            @include fontBold;
+                            &:hover
+                            {
+                                color: inherit;
+                            }
+                        }
+                    }
+                    p
+                    {
+                        font-size: 14px;
+                        margin-bottom: 10px;
+                        line-height: 19.88px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                    }
+                    a
+                    {
+                        @include fontSemiBold;
+                        font-size: 15px;
+                        i{
+                            margin-left: 5px;
+                        }
+                    }
+                }
+                .stretched-link
+                {
+                    &::after
+                    {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        z-index: 1;
+                        content: "";
+                    }
+                }
+               
+            }
+    }
+
+}

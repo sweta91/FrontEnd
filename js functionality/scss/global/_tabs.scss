@@ -1,0 +1,66 @@
+.tab-wrapper{
+    width:100%;
+    @include flex;
+    @include flex-direction-column;
+    > .tabs-nav{
+        margin: 0;
+        padding:0;
+        list-style: none;
+        @include flex;
+        overflow: auto;
+        @include scrollbar;
+        width:100%;
+        gap: 12px;
+        padding-bottom: 10px;
+        @include mq($until:tablet) {
+            margin-left: 0 !important;
+            @include justify-flex-start;
+        }
+    //    tabs  center align width:auto, margin: 0 auto;
+        &.tab-lg{
+            > li{
+                font-size: 20px;
+                line-height: 24px;
+                padding: 9px 28px;
+                border-width: 2px;
+                @include mq($until:tablet) {
+                    font-size: 18px;
+                    line-height: 22px;
+                    padding: 8px 16px;  
+                }
+            }
+        }
+        > li{
+            font-size: 18px;
+            @include fontSemiBold;
+            border: 1px solid $-secondary;
+            color:$-secondary;
+            border-radius: 100px;
+            @include transition (all 0.3s ease-in-out);
+            padding: 5px 15px;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            width: auto;
+            max-width: 100%;
+            cursor: pointer;
+            list-style: none;
+            &.active{
+                color:$-secondary;
+                background-color: $-primary;
+                border-color: $-primary;
+            }
+           
+        }
+        .tab-style-2 &{
+           > li{
+               border-color: $-brown;
+                color:$-brown;
+               &.active{
+                   background-color: $-brown;
+                   color: $-white;
+                   border-color:  $-brown;
+               }
+           }
+        }
+    }
+}

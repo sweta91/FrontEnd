@@ -1,0 +1,503 @@
+@import '../global/variables';
+@import '../global/mixin';
+@import '../global/mq';
+@import '../global/social-connect';
+@import '../global/icon-card-list';
+@import '../global/toggle-switch';
+
+
+
+.hero-section.faq-hero-section
+{
+    .hero-image
+    {
+        .hero-img
+        {
+            @include mq($from:wide)
+            {
+                left: 70%;
+            }
+        }
+    }
+}
+.faq-tab-section 
+{
+    position: static;
+    .faq-bg
+    {
+        position: sticky;
+        top: 0;
+        margin-bottom: 54px;
+        background: $-gray-1;
+        z-index: 10;
+        width: 100%;
+        padding-bottom: 5px;
+    }
+    .faq-sticky
+    {
+        @include flex;
+        @include justify-space-between;
+        @include align-center;
+        background-color: $-white;
+        border-radius: 20px;
+        margin-bottom: 0;
+        @include box-shadow(0px 35px 77px 0px #0000001A);
+        position: -webkit-sticky; /* For Safari */
+        padding: 14px 40px;
+       
+        
+        @include mq($until:tablet)
+        {
+            height: 74px;
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+        h4, .h4
+        {
+            margin: 0;
+            @include mq($until:tablet)
+            {
+                font-size: 16px;
+            }
+        }
+        .input-container
+        {
+            margin: 0;
+            border: 1px solid $-gray-2;
+             min-width: 429px;
+            border-radius: 8px;
+            position: relative;
+            @include transition(all 0.3s ease-in-out);
+            @include mq($until:tablet)
+            {
+                min-width: 50px;
+                width: 45px;
+                position: absolute;
+                top: 19px;
+                right: 10px;
+                input
+                {
+                    height: 45px;
+                    font-size: 16px;
+                   &:focus ~ label, &:not(:placeholder-shown) ~ label {
+                        top: 1px;
+                        font-size: 12px;
+                    }
+                }
+            }
+           
+            i
+            {
+                font-size: 20px;
+            }
+            .search-btn
+            {
+                border: 0;
+                position: absolute;
+                right: 1px;
+                top: 1px;
+                width: 100%;
+                height: 54px;
+                max-width: 46px;
+                background: $-white;
+                border-radius: 8px;
+                line-height: 1;
+                color:$-secondary;
+                @include mq($until:tablet)
+                {
+                   height: 43px;
+                }
+            }
+            label
+            {
+                color: rgba(32,32,32,0.5);
+                
+                @include mq($until:tablet)
+                {
+                    opacity: 0;
+                    top: 12px;
+                    left: 20px;
+                }
+            }
+            @include mq($until:tablet)
+            {
+                &.search-width
+                {
+                    min-width:inherit;
+                    width: calc(100% - 20px);
+                    background-color: $-white;
+                    label
+                    {
+                        opacity: 1;
+                    }
+                    .autocomplete-list
+                    {
+                        &.open
+                        {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .autocomplete-list
+            {
+                display: none;
+                background: $-white;
+                width: 100%;
+                max-height: 320px;
+                overflow: auto;
+                @include scrollbar;
+                position: absolute;
+                border-radius: 0 0 8px 8px;
+                box-shadow: 0px 35px 77px 0px rgba(0,0,0,0.101961);
+                transition: none;
+                &.open
+                {
+                    display: block;
+                    transition: none;
+                }
+                @include mq($until:tablet)
+                {
+                    max-height: 340px;
+                    &.open
+                    { display: none;}
+                }
+                .no-search-result
+                {
+                    padding:20px;
+                    h5, .h5
+                    {
+                        margin-bottom: 10px;
+                    }
+                    p
+                    {
+                        margin-bottom: 20px;
+                        span
+                        {
+                            font-size: 15px;
+                            line-height: 22.5px;
+                        }
+                    }
+                }
+                ul
+                {
+                    padding: 5px 15px; 
+                    li
+                    {
+                        border-bottom: 1px solid $-gray-2;
+                        padding: 10px 0; 
+                        &:last-child
+                        {
+                            border-bottom: 0;
+                        }
+                    }
+                }
+                p
+                {
+                    color:$-secondary;
+                    @include fontBold;
+                    span
+                    {
+                        display: block;
+                        font-size: 12px;
+                        line-height: 17px;
+                       @include fontRegular;
+                    }
+                }
+            }
+        }
+    }
+    .faq-tabs-wrapper
+    {
+       .tab-wrapper
+       {
+            @include flex;
+            @include align-start;
+            flex-wrap: wrap;
+            gap: 20px;
+            @include mq($until:tablet)
+            {
+                flex-wrap: wrap;
+                gap:0;
+            }
+            .choose-faq
+            {
+                width: 363px;
+                max-width: 37%;
+                padding-bottom: 10px;
+                background: $-gray-1;
+                position: -webkit-sticky;
+                position: sticky;
+                top: 90px;
+            
+                @include mq($until:tablet)
+                {
+                    width: 100%;
+                    max-width: 100%;
+                    position: sticky;
+                    top: 84px;
+                    z-index: 9;
+                
+                }
+                &.sticky
+                {
+                    position: sticky;
+                    top:78px;
+                    z-index: 9;
+                }
+            }
+            .title
+            {
+                width: 100%;
+                border-radius: 12px;
+                padding: 16px;
+                background-color: $-white;
+                @include flex;
+                @include justify-space-between;
+                @include align-center;
+                cursor: pointer;
+                color: $-brown;
+                @include fontBold;
+                @include mq($until:tablet)
+                {
+                    border-bottom: 1px solid $-gray-2;
+                }
+                i{
+                    font-size: 22px;
+                }
+                &.show-tabs
+                {
+                    border-radius: 12px 12px 0 0;
+                    i
+                    {
+                        @include transform(rotate(90deg));
+                    }
+                }
+            }
+            .tabs-nav
+            {
+                background: $-white;
+                border-radius: 12px;
+                @include transition(all 0.3s ease-in-out);
+            
+                @include mq($until:tablet)
+                {
+                width: 100%;
+                display: none;
+                border-radius: 0 0 12px 12px;
+                position: relative;
+                top:-1px;
+                box-shadow: 0px 35px 77px 0px rgba(0,0,0,0.101961);
+                }
+            
+                li
+                {
+                    border-bottom: 1px solid $-gray-2;
+                    padding: 16px 40px 16px 16px;
+                    // width: 363px;
+                    font-size: 18px;
+                    line-height: 22.32px;
+                    @include fontBold;
+                    cursor: pointer;
+                    @include mq($until:tablet){
+                        padding: 16px;
+                    }
+                    &:after{
+                        content: "\e910";
+                        font-family: 'focussed-site-icon' !important;
+                        position: absolute;
+                        right: 16px;
+                        font-size: 22px;
+                        color:transparent;
+                        @include mq($until:tablet){
+                            display: none;
+                        }
+                    }
+                    &:last-child
+                    {
+                        border-bottom: 0;
+                    }
+                    &.active
+                    {
+                        color:$-brown;
+                        &:after{
+                            color:$-brown;
+                        }
+                    }
+                }
+            }
+            .tabs-content
+            {
+                width: 100%;
+                @include mq($until:tablet)
+                {
+                    margin-top: 20px;
+                }
+            }
+       }
+    }
+    // .talk-with-clinician
+    // {
+    //     p
+    //     {
+    //         font-size: 20px;
+    //         @include mq($until:tablet)
+    //         {
+    //             font-size: 18px;
+    //         }
+    //     }
+    // }
+}
+
+//accordian section
+.card-icon-list{
+    &.accordion-container{
+        .card-icon{
+            &.accordion-block{
+                display: block;
+                border:0;
+                padding: 0;
+                @include mq($until:tablet){
+                    // padding: 16px;
+                }
+                .custom-accordion-title
+                {
+                    padding: 24px 20px 24px 24px;
+                    @include mq($until:tablet){
+                        padding: 20px 15px 20px 20px;
+                    }
+                    h5, .h5
+                    {
+                        margin: 0;
+                    }
+                    .icon{
+                        @include transform(none);
+                        color:$-secondary;
+                    }
+                    &.t-open{
+                        .icon{
+                            &:before{
+                                content: "\e938";
+                            }
+                        }
+                    }
+                }
+                .custom-accordion-content
+                {
+                    padding: 24px;
+                    padding-top: 16px;
+                }
+            }
+        }
+    }
+}
+.talk-with-clinician
+{
+    p
+    {
+        font-size: 20px;
+        @include mq($until:tablet)
+        {
+            font-size: 18px;
+        }
+    }
+}
+.terms-and-data-handle{
+    &.card-icon-list.accordion-container{
+        counter-reset: title;
+        .card-icon.accordion-block .custom-accordion-title h3{
+            counter-reset: section;
+            position: relative;
+            @include flex;
+            width: 100%;
+            &:before{
+                counter-increment: title;
+                content: counters(title, ".") ". ";
+                margin-right: 8px;
+                display: inline-block;
+                @include col-auto;
+            }
+        }
+        .custom-accordion-content{
+             > ol{
+                counter-reset: section;
+                li{
+                    position: relative;
+                    margin-bottom: 15px;
+                }
+                > li{
+                    counter-reset: subsection;
+                    padding-left: 40px;
+                    a
+                    {
+                        word-break: break-word;
+                        display: inline;
+                    }
+                    &:before{
+                        counter-increment: section;
+                        content: counter(title) "." counter(section) " ";
+                        display: inline-block;
+                        position: absolute;
+                        left: 0;
+                        width: 33px;
+                        text-align: left;
+                    }
+                     ol{
+                        counter-reset: subSubsection;  
+                        margin-top: 10px;
+                        >li{
+                         padding-left: 50px;
+                            &:before{
+                                counter-increment: subsection;
+                                content: counter(title) "." counter(section) "." counter(subsection) " ";
+                                position: absolute;
+                                left: 0;
+                                width: 42px;
+                                text-align: left;
+                            }
+                            ol{
+                                >li{
+                                    padding-left: 60px;
+                                    &:before{
+                                        counter-increment: subSubsection;
+                                        content: counter(title) "." counter(section) "." counter(subsection) "." counter(subSubsection) " ";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.policy-wrapper {
+    background: $-white;
+    border-radius: 8px;
+    padding: 40px 20px;
+    p
+    {
+        font-size: 16px;
+        line-height: 150%;
+        margin-bottom: 10px;
+    }
+    ul
+    {
+        padding-left: 15px;
+        margin: 20px 0;
+        li
+        {
+            font-size: 16px;
+            line-height: 150%;
+            margin-bottom: 10px;
+            list-style: disc;
+        }
+    }
+    h2,h3
+    {
+        margin-top: 20px;
+    }
+  }

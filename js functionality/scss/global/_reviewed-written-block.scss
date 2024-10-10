@@ -1,0 +1,18 @@
+.reviewed-written-block{
+    line-height: 124%;
+    .doctor-details{
+        padding-bottom: 15px;
+        border-bottom: 1px solid $-gray-3;
+        img{
+            width: 36px;
+            margin-top: 20px;
+        }
+    }
+    .written-by{
+        margin-top: 20px;
+        img{
+            width: 42px;
+            margin-top: 22px;
+        }
+    }   
+}

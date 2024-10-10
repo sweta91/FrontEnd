@@ -1,0 +1,38 @@
+.hide-tablet {
+	display: none;
+	@include mq($until: desktop) {
+		display: block;
+	}
+}
+.hide-tablet-up {
+	@include mq($from: tablet) {
+		display: none;
+	}
+}
+
+.desktopOnly {
+	display: none;
+	@include mq($from: desktop) {
+		display: block;
+	}
+}
+
+.tablet-up {
+	display: none;
+	@include mq($from: tablet) {
+		display: block;
+	}
+}
+
+.mobileOnly {
+	display: block;
+	@include mq($from: desktop) {
+		display: none;
+	}
+}
+.show-tablet {
+	display: none;
+	@include mq($until: tablet) {
+		display: block;
+	}
+}

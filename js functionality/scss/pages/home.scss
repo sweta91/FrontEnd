@@ -1,0 +1,530 @@
+@import '../global/variables';
+@import '../global/mixin';
+@import '../global/mq';
+@import '../global/partners-in-health';
+@import '../global/icon-card-list';
+@import '../global/faq-section';
+@import '../global/right-side-img';
+@import '../global/adhd-insights';
+@import '../global/steps';
+
+
+.hero-section{
+    margin-top: -157px;
+    + section{
+        margin-top: -140px;
+    }
+   @include mq($until:wide){
+     margin-top: -120px;
+    + section{
+        margin-top: -180px;
+    }
+   }
+   @include mq($until:desktop){
+    margin-top: -110px;
+    + section{
+        margin-top: -70px;
+    }
+   }
+   @include mq($until:tablet){
+    padding-bottom:40px; 
+    margin-top: 0;
+    + section{
+        margin-top:0;
+    }
+   }
+    .hero-text
+    {   
+        padding-right: 0;
+        @include mq($until:wide)
+        { 
+         padding-right: 20px;
+         padding-top: 40px;
+        }
+        @include mq($until:desktop)
+        { 
+         padding-top: 70px;
+        }
+        @include mq($until: tablet) {
+            padding-top: 0;
+            padding-right: 0;
+        }
+        h1
+        {
+            @include mq($until: mobileLarge) {
+                font-size: 24px;
+                line-height: 30px;
+            }
+        }
+        .subtext
+        {
+            margin: 20px 0;
+            @include mq($until: desktop) {
+                margin: 10px 0;
+            }
+            @include mq($until: tablet) {
+                margin: 0;
+            }
+        }
+        .btn
+        {
+            margin: 20px 0;
+          //  max-width: 307px;
+            max-width: 253px;
+            width: 100%;
+        }
+    }
+    .hero-image
+    {
+        @include mq($until:tablet){
+            z-index: 1;
+            margin-top:-55px;
+         //  margin-top: -110px;
+           // margin-top: 10px;
+        }
+        .hero-img{
+            left: 68%;
+            width: 1039px;
+            height: 1039px;
+            @include mq($until:wide){
+                left: 57%;
+                width: 900px;
+                height: 900px;
+            }
+            @include mq($until:desktop){
+                //left: 52%;
+                left: 62%;
+                width: 700px;
+                height: 700px;
+            }
+            @include mq($until:tablet){
+                left: 50%;
+                width:564px;
+                height: 564px;
+            }
+        }
+        .btn
+        {
+            margin: 20px 0;
+            @include mq($until: tablet) {
+                position: absolute;
+                bottom: 130px;
+                //bottom: 110px;
+                left: 50%;
+                @include transform(translateX(-50%));
+                //max-width: 307px;
+                max-width: 253px;
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
+        .registered-pharmacy
+        {
+            text-align: center;
+            padding:14px;
+            border-radius: 20px;
+            background-color: rgba($-white,0.8);
+            @include linear-gradient(112.34deg, rgba(249, 244, 241, 0.7) 62.6%, rgba(249, 244, 241, 0) 103.64%);
+            width: 240px;
+            position: absolute;
+            bottom: 225px;
+            left: 68%;
+            @include transform(translateX(-50%));
+            @include backdrop-filter(blur(2px));
+            z-index: 1;
+            @include mq($until:wide){
+                bottom: 185px;
+                left: 57%;
+            }
+            @include mq($until:desktop){
+                bottom: 125px;
+                left: 62%;
+            }
+            @include mq($until: tablet) {
+                bottom: -9px;
+                left: 50%;
+                // position: static;
+                // transform: none;
+                // margin: -15px auto 0;
+            }
+            img{
+                max-width: 103px;
+                //max-height: 34px;
+            }
+            p
+            {
+                margin-bottom: 10px;
+                font-size: 12px;
+                line-height: 124%;
+            }
+           
+        }
+    }
+}
+
+.list
+{
+    margin: 20px 0;
+    li
+    {
+        font-size: 20px;
+        line-height: 141%;
+        margin:12px 0 0;
+        @include flex;
+        @include align-start;
+        @include mq($until: desktopLarge) {
+            font-size: 18px;
+        }
+        @include mq($until: tablet) {
+            font-size: 16px;
+        }
+        [class^="icon-"], [class*=" icon-"]
+        {
+            font-size: 24px;
+            margin-right: 5px;
+            margin-top: 3px;
+            @include mq($until: tablet) {
+                font-size: 22px;
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+// **************** Steps *****************
+.steps
+{
+    .title
+    {
+        max-width: 634px;
+        padding-right: 60px;
+        position: sticky;
+        top: 10px;
+        @include align-self-start;
+        @include mq($until: desktopLarge) {
+            padding-right: 30px;
+        }
+        @include mq($until: tablet) {
+            padding-right: 0;
+            max-width: 100%;
+            position: static;
+        }
+        p
+        {
+            font-size: 20px;
+            color:$-gray-5;
+            @include mq($until:desktop)
+            {
+                font-size: 18px;
+            }
+        }
+    }
+    
+}
+
+// ***************** focused-consultations *****************
+.focused-consultations
+{
+   // padding-bottom: 100px;
+   .d-tablet-block
+   {
+    margin-bottom: 50px;
+    
+   }
+    @include mq($until:tablet)
+    {
+        .d-sm-block
+        {
+            p
+            {
+                margin-bottom: 20px;
+                margin-right: 0 !important;
+            }
+            .btn
+            {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+       
+    }
+   
+    h3, .h3
+    {
+        text-align: center;
+        @include fontSemiBold;
+    }
+    ul
+    {
+        li
+        {
+           display: block;
+           border-bottom: 1px solid $-gray-3;
+           padding: 20px 0;
+           @include mq($until:desktopLarge)
+            {
+                padding: 15px 0;
+            }
+           p
+           {
+            text-align: left;
+            width: 49%;
+            display: inline-block;
+            span
+            {
+                font-size: 14px;
+            }
+            b
+            {
+                font-size: 18px;
+                text-align: left;
+                @include fontSemiBold;
+                @include mq($until:desktopLarge)
+                {
+                    font-size: 16px;
+                }
+            }
+            i
+            {
+                color:$-primary;
+                padding-right: 10px;
+                &.icon-cross
+                {
+                    color: $-secondary;
+                    font-weight: bold;
+                }
+            }
+           }
+           &:last-child
+           {
+            border-bottom: 0;
+            padding-bottom: 0;
+           }
+          
+        }
+    }
+    .with-us
+    {
+        width: 50%;
+        margin-right: 30px;
+        display: flex;
+        flex-direction: column;
+        @include mq($until:desktopLarge)
+        {
+            margin-right: 15px;
+            width: 45%;
+        }
+        @include mq($until:desktop)
+        {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .consultation-box
+        {
+            @include box-shadow(0px 5px 24px 0px #00000026);
+            background-color: $-white;
+            border:2px solid $-primary;
+            border-radius: 12px;
+            padding: 24px;
+            height: 100%;
+            // min-height: 455px;
+            @include mq($until:desktopLarge)
+            {
+                padding: 20px;
+            }
+           svg,img
+           {
+            width: 120px;
+           }
+            .logo
+            {
+                width: 150px;
+            }
+        }
+        
+    }
+    
+    .without-us
+    {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        @include mq($until:desktopLarge)
+        {
+            width: 55%;
+        }
+        @include mq($until:desktop)
+        {
+            width: 100%;
+        }
+        h5, .h5
+        {
+            margin-bottom: 0;
+        }
+        
+        .consultation-box
+        {
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+linear-gradient(0deg, rgba(235, 235, 235, 0.2), rgba(235, 235, 235, 0.2));
+            border: 1px solid $-gray-2;
+            padding: 24px;
+            margin-right: 10px;
+            width: 50%;
+            border-radius: 12px;
+            height: 100%;
+
+            // min-height: 455px;
+            // margin-bottom: 50px;
+            @include mq($until:desktopLarge)
+            {
+                padding: 20px;
+            }
+            svg
+            {
+                zoom: 0.8;
+            }
+            
+            ul
+            {
+                li
+                {
+                    display: block;
+                    padding: 10px 5px;
+                    p
+                    {
+                        display: block;
+                        width: 100%;
+                        span
+                        {
+                            color: $-gray-4;
+                        }
+                    }
+                    &:last-child
+                    {
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+.desktop-comparision
+{
+    display: none;
+    @include mq($from:desktop)
+    {
+        @include flex;
+    }
+}
+// ************************Mobile Comparision********************
+.mobile-comparision
+{
+    margin: 50px 0;
+    display: none;
+    @include mq($until:desktop)
+    {
+        display: block;
+    }
+    .with-us
+    {
+        width: 54%;
+        text-align: right;
+        margin-bottom: 15px;
+    }
+    .without-us
+    {
+        width: 50%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .comparision-wrapper
+    {
+        @include flex;
+        @include justify-center;
+       /// @include align-center;
+        .comparision-block
+        {
+           .title
+           {
+            &:first-child
+            {
+               
+                @include flex;
+                @include justify-center;
+                @include align-center;
+            }
+           }
+            &:nth-child(2)
+            {
+                border: 2px solid $-primary;
+                border-radius: 12px;
+                @include box-shadow(0px 15px 14px 0px rgba(66, 48, 125, 0.12));
+                p
+                {
+                    position: relative;
+                    top: -2px;
+                }
+            }
+            p
+            {
+                padding: 23px 5px;
+                font-size: 12px;
+                line-height: 17px;
+                text-align: center;
+                min-height: 85px;
+                color: $-secondary;
+                border-bottom: 1px solid $-gray-2;
+                @include mq($until:tablet)
+                {
+                    padding: 10px 5px;
+                    @include justify-center;
+                    @include align-center;
+                    @include flex;
+                    flex-direction: column;
+                }
+                img
+                {
+                    width: 85px;
+                }
+                &:last-child
+                {
+                    border-bottom: 0;
+                }
+                &.title
+                {
+                    font-size: 15px;
+                    line-height: 18px;
+                    text-align: left;
+                    @include flex;
+                    @include align-start;
+                    @include justify-center;
+                    
+                }
+                i
+                {
+                    display: block;
+                    color:$-primary;
+                    &.icon-cross
+                    {
+                        color: $-secondary;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.partners-in-health{
+    background-color: $-white;
+}
+
+.facts-section{
+   .white-shadow{
+        @include mq($until:tablet){
+            margin-left: -20px;
+            margin-right: -20px;
+            padding: 20px !important;
+        }
+   }
+}

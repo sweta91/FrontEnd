@@ -1,0 +1,68 @@
+.btn {
+	@include fontSemiBold;
+	text-align: center;
+	border: 2px solid $-secondary;
+	border-radius: 100px;
+	height: 58px;
+	padding: 16px 32px;
+	font-size: 18px;
+	line-height: 142%;
+	position: relative;
+	color: $-secondary;
+	background-color: transparent;
+	text-decoration: none !important;
+	@include transition(all 0.3s ease-in-out);
+	@include inline-flex;
+	@include align-center;
+	@include align-content-center;
+	@include justify-center;
+	& + .btn {
+		margin-left: 20px;
+	}
+	[class^="icon-"], [class*=" icon-"]{
+		padding-left: 5px;
+	}
+	i
+	{
+		@include transition(all 0.5s ease-in-out);
+	}
+	&:hover {
+		background-color:$-secondary;
+		color:$-white;
+		i
+		{
+			@include transform(translate(5px,0));
+			
+		}
+	}
+	&.active,
+	&:active {
+		background-color:$-gray-2;
+		color: $-secondary;
+	}
+
+	&:disabled, &.disabled {
+		@include unselectable;
+		cursor: not-allowed;
+		//pointer-events: none;
+		background-color: $-gray-2;
+		color:$-gray-5;
+	}
+
+	&.btn-primary{
+		border: 0;
+		color: $-secondary;
+	    background-color: $-primary;
+		&:hover {
+			background-color: $-primary;
+		}
+		&.active, &:active {
+			background:$-primary;
+		}
+		&:disabled, &.disabled{
+			background-color: $-gray-2;
+			color:$-gray-5;
+		}
+	}
+	
+}

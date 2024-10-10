@@ -1,0 +1,198 @@
+@font-face {
+  font-family: 'focussed-site-icon';
+  src:  url('#{$fontPath}/focussed-site-icon.eot?qipnw3');
+  src:  url('#{$fontPath}/focussed-site-icon.eot?qipnw3#iefix') format('embedded-opentype'),
+    url('#{$fontPath}/focussed-site-icon.ttf?qipnw3') format('truetype'),
+    url('#{$fontPath}/focussed-site-icon.woff?qipnw3') format('woff'),
+    url('#{$fontPath}/focussed-site-icon.svg?qipnw3#focussed-site-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'focussed-site-icon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .icon-subtract:before {
+    content: "\e938";
+  }
+  .icon-warning:before {
+    content: "\e937";
+  }
+  .icon-instagram:before {
+    content: "\e934";
+  }
+  .icon-facebook:before {
+    content: "\e935";
+  }
+  .icon-twitter:before {
+    content: "\e936";
+  }
+  .icon-repeat:before {
+    content: "\e933";
+  }
+  .icon-check-circle-fill:before {
+    content: "\e932";
+  }
+  .icon-calendar-1:before {
+    content: "\e930";
+  }
+  .icon-clock:before {
+    content: "\e931";
+  }
+.icon-alcohol:before {
+    content: "\e900";
+  }
+  .icon-alert-circle:before {
+    content: "\e901";
+  }
+  .icon-arrow-down:before {
+    content: "\e902";
+  }
+  .icon-arrow-down-left:before {
+    content: "\e903";
+  }
+  .icon-arrow-down-right:before {
+    content: "\e904";
+  }
+  .icon-arrow-left:before {
+    content: "\e905";
+  }
+  .icon-arrow-right:before {
+    content: "\e906";
+  }
+  .icon-arrow-up:before {
+    content: "\e907";
+  }
+  .icon-arrow-up-left:before {
+    content: "\e908";
+  }
+  .icon-arrow-up-right:before {
+    content: "\e909";
+  }
+  .icon-calendar:before {
+    content: "\e90a";
+  }
+  .icon-ccv:before {
+    content: "\e90b";
+  }
+  .icon-check:before {
+    content: "\e90c";
+  }
+  .icon-check-circle:before {
+    content: "\e90d";
+  }
+  .icon-chevron-down:before {
+    content: "\e90e";
+  }
+  .icon-chevron-left:before {
+    content: "\e90f";
+  }
+  .icon-chevron-right:before {
+    content: "\e910";
+  }
+  .icon-chevron-up:before {
+    content: "\e911";
+  }
+  .icon-circle:before {
+    content: "\e912";
+  }
+  .icon-credit-card:before {
+    content: "\e913";
+  }
+  .icon-cross:before {
+    content: "\e914";
+  }
+  .icon-cross-circle:before {
+    content: "\e915";
+  }
+  .icon-cross-hollow:before {
+    content: "\e916";
+  }
+  .icon-delivery-truck:before {
+    content: "\e917";
+  }
+  .icon-disability:before {
+    content: "\e918";
+  }
+  .icon-dosage:before {
+    content: "\e919";
+  }
+  .icon-female:before {
+    content: "\e91a";
+  }
+  .icon-height:before {
+    content: "\e91b";
+  }
+  .icon-info-circle:before {
+    content: "\e91c";
+  }
+  .icon-list_allergy:before {
+    content: "\e91d";
+  }
+  .icon-list_conditions:before {
+    content: "\e91e";
+  }
+  .icon-list_medicine:before {
+    content: "\e91f";
+  }
+  .icon-list_rec_drugs:before {
+    content: "\e920";
+  }
+  .icon-list_surgery:before {
+    content: "\e921";
+  }
+  .icon-lock-keyhole:before {
+    content: "\e922";
+  }
+  .icon-mail:before {
+    content: "\e923";
+  }
+  .icon-male:before {
+    content: "\e924";
+  }
+  .icon-map-pin:before {
+    content: "\e925";
+  }
+  .icon-pencil:before {
+    content: "\e926";
+  }
+  .icon-pen-square:before {
+    content: "\e927";
+  }
+  .icon-phone:before {
+    content: "\e928";
+  }
+  .icon-plus:before {
+    content: "\e929";
+  }
+  .icon-search:before {
+    content: "\e92a";
+  }
+  .icon-sliders-horizontal:before {
+    content: "\e92b";
+  }
+  .icon-stopwatch:before {
+    content: "\e92c";
+  }
+  .icon-trashcan:before {
+    content: "\e92d";
+  }
+  .icon-user:before {
+    content: "\e92e";
+  }
+  .icon-weight:before {
+    content: "\e92f";
+  }
+  

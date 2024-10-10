@@ -1,0 +1,124 @@
+
+.right-img-section
+{
+    padding-bottom: 0;
+    overflow: hidden;
+    .right-img-block
+    {
+        @include flex;
+        @include align-center;
+        @include mq($until:tablet)
+        {
+            display: block;
+        }
+        ul
+        {
+            li
+            {
+                p
+                {
+                    // text-indent: -33px;
+                    // padding-left: 33px;
+                    // display: block;
+                    @include flex;
+                    @include align-center;
+                    i
+                    {
+                        color:$-primary;
+                        font-size: 23px;
+                        padding-right: 10px;
+                       // position: relative;
+                       // top: -2px;
+                    }
+                }
+            }
+        }
+        .left-side-text
+        {
+            max-width: 563px;
+            font-size: 20px;
+            line-height: 142%;
+            @include col-auto;
+            margin-top: -130px;
+            position: relative;
+            z-index: 1;
+            @include mq($until:wide)
+            {
+                margin-top: -110px;
+            }
+            @include mq($until:desktop)
+            {
+                margin-top:0;
+                margin-bottom: 80px;
+                font-size: 18px;
+            }
+            @include mq($until:tablet)
+            {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            @include mq($until:mobileLarge){
+                text-align: center;
+                > *:not(.btn){
+                    text-align: left;
+                }
+            }
+            ul{
+                margin-bottom: 0;
+                margin-top: 20px;
+                li{
+                    margin-bottom: 20px;
+                }
+            }
+            p
+            {
+                margin:0;
+            }
+            .btn
+            {
+                margin-top: 20px;
+                @include mq($until:mobileLarge){
+                    width: 100%;
+                    max-width: 300px;
+                }
+            }
+        }
+        .right-side-image
+        {
+            @include mq($until:tablet)
+            {
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+            @include align-self-end;
+            img{
+                width: 1028px;
+                max-width: none;
+                display: block;
+                position: relative;
+                @include transform(translateX(-50%));
+                left: 34%;
+                margin-bottom: -50px;
+                margin-top: -42px;
+                @include mq($until:wide)
+                {
+                    left: 30%;
+                    margin-bottom: 0;
+                    margin-top: 0;
+                    width: 700px;
+                }
+                @include mq($until:desktop){
+                    left: 3%;
+                    width: 650px;
+                }
+                @include mq($until:tablet){
+                    @include transform(none);
+                    margin-bottom: -20px;
+                    width: 375px;
+                }
+            }
+        }
+        
+    }
+   
+}

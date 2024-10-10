@@ -1,0 +1,184 @@
+
+.select {
+    position: relative;
+    margin-bottom: 15px;
+    width: 480px;
+   @include fontRegular;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 150%;
+    height: 56px;
+    text-align: left;
+    margin-bottom: 50px;
+    @include mq($until: mobileLarge) {
+        width: 100%;
+    }
+}
+  .select .selectBtn {
+    padding: 10px 15px;
+    box-sizing: border-box;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background: rgba(255, 255, 255, 0.8);
+    /* Shadow/Box Shadow */
+    @include box-shadow(0px 4px 50px rgba(0, 0, 0, 0.05));
+    border-radius: 28px;
+    color: $-charcoal-60;
+    @media (max-width:500px)
+    {
+      padding: 10px 25px;
+    }
+  }
+  .select .selectBtn:after {
+    content: "";
+    position: absolute;
+    top: 45%;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    @include transform(translateY(-50%) rotate(45deg));
+    border-right: 1.5px solid #000001;
+    border-bottom: 1.5px solid #000001;
+    @include transition(0.2s ease);
+  }
+  .select .selectBtn.toggle {
+    border-radius: 3px 3px 0 0;
+  }
+  .select .selectBtn.toggle:after {
+    @include transform(translateY(-50%) rotate(-135deg));
+  }
+  .select .selectDropdown {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    background: var(--bg1);
+    // border-top: 1px solid #eee;
+    z-index: 1;
+    background: #fff;
+    @include transform(scale(1, 0));
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    visibility: hidden;
+    @include transition(0.2s ease);
+    max-height: 120px;
+    overflow: auto;
+    &.open
+    {
+      visibility: visible;
+      @include transform(scale(1,1));
+      top: 38px;
+     
+    }
+  }
+  .select .selectDropdown .option {
+    padding: 10px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .select .selectDropdown .option:hover {
+    background: #f8f8f8;
+  }
+  .select .selectDropdown.toggle {
+    visibility: visible;
+    @include transform(scale(1, 1));
+    top:37px;
+  }
+  .selectDropdown
+  {
+    position: relative;
+    .active
+    {
+      &::after
+      {
+        content: "\e93d";
+        font-family: 'eased-icons' !important;
+        font-size: 20px;
+        color: #000001;
+        position: absolute;
+        right: 10px;
+      }
+    }
+  }
+  .selectBtn
+  {
+    &.border-radius10
+    {
+      border-radius: 10px;
+    }
+  }
+  .custom-select
+  {
+    // background: rgba(255,255,255,.8);
+    @include box-shadow(0px 4px 50px rgba(0,0,0,.05));
+    border-radius: 10px;
+    color: #7e7e84;
+    margin-bottom: 15px;
+    width: 480px;
+   @include fontRegular;
+    font-style: normal;   
+    font-size: 16px;
+    line-height: 150%;
+    height: 56px;
+    text-align: left;
+    border: 0;
+    padding: 0 20px;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    // appearance: none;
+    // background: url("../../images/down-arrow.png") 96% / 15% no-repeat #fff;
+    @media (max-width:767px)
+    {
+      width: 100%;
+    }
+  }
+  .custom-select option
+  {
+    background: #fff;
+   @include fontRegular;
+    color: $-charcoal-60;
+  }
+  .custom-select option:hover {
+    color: #252E34;
+  }
+
+  // ***********************UI Autocomplete******************
+.accordian-content .options,.input-container .options
+{
+  z-index: 1;
+  background: rgb(255, 255, 255);
+  @include box-shadow(rgba(0, 0, 0, 0.05) 0px 4px 50px);
+  border-radius: 0 0 16px 16px;
+  padding: 20px;
+  width: 100% !important;  
+  position: absolute;
+  top: 56px;
+  max-height: 200px;
+  overflow: auto;        
+  li
+  {
+    padding: 10px 0;
+    text-align: left;
+    a
+    {
+      @include transition (all .3s ease-in-out);
+      &:hover
+      {
+        opacity: 0.7;
+      }
+    }
+  }
+  
+}
+.border-radiusTop10
+{
+  border-radius: 10px 10px 0 0 !important;
+}
+
+

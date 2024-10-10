@@ -1,0 +1,126 @@
+.team-wrapper:not(.glider){
+    @include flex;
+    @include flex-wrap;
+    @include justify-center;
+    @include align-end;
+    gap:40px 20px;   
+}
+.team-box{
+    position: relative;
+    flex: 0 0 auto;
+    width: calc(33.33333333% - 14px);
+    display: block;
+    @include mq($until: tabletLandscape) { 
+        flex: 0 0 auto;
+        width: calc(50% - 10px);
+    }
+    @include mq($until: tablet) { 
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    &:before{
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 42px);
+        position: absolute;
+        @include linear-gradient(180deg, rgba(235, 235, 235, 0.2) 0%, #EBEBEB 100%); //gray-shadow
+        border-radius: 20px;
+        @include transition(all 0.3s ease-in-out);
+    }
+    &:hover{
+        &:before{
+            @include box-shadow(0px 6px 8px 0px rgba(46,46,46,0.2));
+        }
+    }
+    // .team-info{
+    //     position: relative;
+    //     z-index: 1;
+        
+    // }
+    img{
+        width: 370px;
+        max-width: 100%;
+        display: block;
+        position: relative;
+    }
+    .doctor-details{
+        padding: 16px;
+        border-radius: 20px;
+        color:$-secondary;
+        @include linear-gradient(112.34deg, rgba(249, 244, 241, 0.8) 62.6%, rgba(249, 244, 241, 0) 103.64%);
+        max-width: calc(100% - 20px);
+        width: 315px;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        right: 0;
+        @include box-shadow(0px 5px 24px 0px #0000001A);
+        @include backdrop-filter(blur(2px));
+        text-align: left;
+        @include mq($until: desktop) {
+            max-width: calc(100% - 20px);
+            width: 350px;
+        }
+        span{
+            text-decoration: none;
+        }
+        p{
+            font-size: 16px;
+            line-height: 134%;
+        }
+    }
+}
+.team-box-style-2{
+    .team-box{
+        @include flex;
+        @include align-end;
+        @include linear-gradient(180deg, rgba(235, 235, 235, 0.2) 0%, #EBEBEB 100%); //gray-shadow
+        border-radius: 20px;
+        @include transition(all 0.3s ease-in-out);
+        &:before{
+            content: none;
+        }
+        img{
+            margin: 0;
+            max-width: 146px;
+            margin-top: -35px;
+            object-position: top;
+            height: 164px;
+            object-fit: cover;
+        }
+        .doctor-details{
+            position: static;
+            margin: 15px 20px 15px 4px;
+            padding: 10px 15px;
+            @include align-self-center;
+            width: 100%;
+            max-width: 320px;
+            .dr-name{
+                margin-bottom: 3px;
+                font-size: 16px;
+                line-height: 20px;
+                @include fontBold;
+                display: block;
+            }
+            .dr-designation{
+                display: block;
+                font-size: 12px;
+                line-height: 16px;
+                margin-bottom: 10px;
+            }
+            .meet-link{
+                color:$-brown;
+                font-size: 12px;
+                line-height: 16px;
+                display: block;
+                i{
+                    margin-left: 5px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

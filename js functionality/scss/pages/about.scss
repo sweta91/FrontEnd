@@ -1,0 +1,299 @@
+@import '../global/variables';
+@import '../global/mixin';
+@import '../global/mq';
+@import '../global/right-side-img';
+@import '../global/gray-to-white-card-section';
+@import '../global/icon-card-list';
+@import '../global/social-connect';
+@import '../global/focused-team-slider';
+
+
+.about-hero{
+    margin-top: -292px;
+    + section{
+        margin-top: -50px;
+    }
+   @include mq($until:wide){
+     margin-top: -120px;
+    + section{
+        margin-top: -45px;
+    }
+   }
+   @include mq($until:desktop){
+    margin-top: -120px;
+    + section{
+        margin-top: -30px;
+    }
+   }
+   @include mq($until:tablet){
+    margin-top: -50px;
+    padding-top: 0;
+    + section{
+        margin-top: -40px;
+    }
+   }
+   @include mq($until:mobileSmall){
+        margin-top: -30px;
+   }
+    .container{position: relative;}
+    .hero-text{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        @include flex;
+        @include flex-wrap;
+        @include justify-center;
+        @include align-content-center;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 80px;
+        max-width: 100%;
+        @include mq($until: desktop) {
+            padding-top: 60px;
+        }
+        @include mq($until: tablet) {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px;
+        }
+        h1{
+            width: 100%;
+        }
+        .subtext{
+            max-width: 580px;
+        }
+    }
+    .hero-image{
+        width: 100%;
+        .hero-img{
+            left: 50%;
+            margin: 0;
+            height: auto;
+            width: 1197px;
+            height: 1196px;
+            @include mq($until: wide) {
+                width: 930px;
+                height: 929px;
+            }
+            @include mq($until: desktop) {
+                //display: none;
+                width: 894px;
+                height: 894px;
+            }
+            @include mq($until:tablet){
+                width: 800px;
+                height: 800px;
+            }
+            @include mq($until:mobileSmall){
+                width: 750px;
+                height: 750px;
+            }
+        }
+    }
+}
+.about-focused-box{
+    position: relative;
+    padding: 60px;
+    &:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-image: url('../../images/about-ring-bg.png');
+        background-repeat: no-repeat;
+        background-size: 683.68px;
+        // background-position: top 262.32px left 884.32px;
+        // background-position: top 260px left 950px;
+        background-position: bottom -300px right -310px;
+    }
+    .position-relative{
+        z-index: 1;
+    }
+    p:not(:last-of-type){
+        margin-bottom: 43px;
+    }
+    @include mq($until: desktop) {
+        padding: 30px 30px 40px;
+    }
+    @include mq($until: tablet) {
+        padding: 20px 20px 40px;
+    }
+    .other-brands{
+        padding-top:60px;
+        gap:30px;
+        @include mq($until: desktop) {
+            padding-top:40px
+        }
+        @include mq($until: tablet) {
+            @include justify-center;
+        }
+        .image-box{
+            background-color: $-white;
+            @include box-shadow(0px 9px 20px 0px #0000001A, 0px 36px 36px 0px #00000017, 0px 81px 49px 0px #0000000D,0px 145px 58px 0px #00000003, 0px 226px 63px 0px #00000000);
+            border-radius: 10px;
+            padding: 20px;
+            min-width: 328px;
+            @include flex;
+            @include align-center;
+            @include justify-space-between;
+            max-width: 400px;
+            img{
+                display: block;
+                margin: 0;
+                max-height: 70px;
+            }
+            @include mq($until: desktop) {
+                min-width: 0;
+                img{
+                    max-width: 200px;
+                }
+            }
+            @include mq($until: tablet) {
+                width: 100%;
+            }
+        }
+    }
+}
+.right-img-section{
+    @include mq($until:tablet)
+    {
+        padding-top: 80px;
+    }
+    .right-img-block
+    {
+        .left-side-text
+        {
+            padding: 80px 0;
+            margin:0;
+            p:not(:last-of-type){
+                margin-bottom: 30px;
+            }
+            @include mq($until:desktop){
+                max-width: 490px;
+            }
+            @include mq($until: tablet) {
+                padding: 0 0 40px;
+                max-width: 100%;
+            }
+        }
+        .right-side-image{
+            img{
+                margin-top: 0;
+                left: 53%;
+                margin-bottom: -90px;
+                @include mq($from:wide){
+                    width: 913px;
+                }
+                @include mq($until:wide)
+                {
+                    left: 40%;
+                    margin-bottom: 0;
+                }
+                @include mq($until:desktopLarge)
+                {
+                    left: 30%;
+                    margin-bottom: 0;
+                }
+                @include mq($until:desktop){
+                    left: 30%;
+                    margin-bottom: 0;
+                    width: 580px;
+                }
+                @include mq($until:tablet){
+                    left: 0;
+                    width: 375px;
+                }
+            }
+        }
+    }
+}
+.authorities-section{
+    .trusted-block{
+        border-radius: 20px;
+        padding: 40px 60px 40px 60px;
+        @include box-shadow(5px 8px 18px 0px #00000026);
+        position: relative;
+        top: -129px;
+        margin-top: 80px; // due to just above sectin bottom spacing 200px
+        min-height: 250px;
+        @include mq($until:desktopLarge)
+        {
+            margin-top: 100px;
+        }
+        @include mq($until: desktop) {
+            margin-top:130px;
+            border-radius: 10px;
+            padding: 40px 20px 40px 20px;
+        }
+    }
+    + section{
+        margin-top: -129px; // keep same as trusted block top value 
+    }
+    ul.authorities-logo{
+        margin: 0;
+        @include flex;
+        @include justify-center;
+        @include align-center;
+        padding: 20px;
+        margin-top: 10px;
+        @include mq($until: desktop) {
+            margin-top: 30px;
+            padding: 0;
+        }
+        @include mq($until: tablet) {
+            display: block;
+            margin-top: 0;
+        }
+        li{
+            position: relative;
+            &:not(:last-child){
+                padding-right: 60px;
+                margin-right: 60px;
+                
+                &:after{    
+                    content: "";
+                    height: 50px;
+                    width: 1px;
+                    background-color: $-gray-2;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    @include transform(translateY(-50%));
+                }
+                // @include mq($until: desktop) {
+                //     padding-right: 30px;
+                //     margin-right: 30px;
+                // }
+                @include mq($until: tablet) {
+                    padding-right: 0;
+                    margin-right: 0;
+                    &:after{    
+                       content: none;
+                    }
+                }
+            }
+            @include mq($until: tablet) {
+                border-top: 1px solid $-gray-2;
+                padding-top: 30px;
+                margin-top: 30px;
+            }
+            img{
+                display: block;
+                max-height: 100px;
+                max-width: 300px;
+                @include mq($until: desktop) {
+                    max-width: 180px;
+                }
+                @include mq($until: tablet) {
+                max-width: 250px;
+                }
+            }
+        }
+    }
+}

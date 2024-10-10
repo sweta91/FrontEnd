@@ -1,0 +1,26 @@
+@import 'common-slider';
+@import 'team-box';
+.focused-team-section{
+    .btn{
+        @include mq($until: tablet) {
+            width: 100%;
+            max-width: 350px;
+        }
+    }
+}
+.focused-team-slider{
+    padding-bottom: 60px;
+    &.glider{
+        padding-bottom: 35px;
+        overflow-x: hidden;
+        .team-box{
+            @include col;
+        }
+    }
+    + .aarow-dot{
+        padding-bottom: 35px;
+        &:has(.glider-dots .glider-dot:only-child){
+            padding-bottom: 0;
+        }
+    }
+}

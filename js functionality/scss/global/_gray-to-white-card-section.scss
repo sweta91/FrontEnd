@@ -1,0 +1,33 @@
+.gray-to-white-card-section{
+    .title-block{
+        margin-bottom: 60px;
+        @include mq($until: desktop) {
+            margin-bottom: 40px;
+        }
+    }
+}
+.gray-to-white-card-wrapper{
+    @include mq($until: tabletLandscape) {
+        gap: 20px;
+    }
+    @include mq($until: tablet) {
+        gap: 40px;
+    }
+    .col{
+        @include mq($until: tabletLandscape) {
+            padding: 20px !important;
+        }
+        @include mq($until: desktop) {
+            padding: 18px !important;
+        }
+        img{
+            width: 90px;
+            display: block;
+            margin-left: 0;
+            margin-bottom: 16px;
+        }
+        h4, .h4{
+            margin-bottom: 16px;
+        }
+    }
+}

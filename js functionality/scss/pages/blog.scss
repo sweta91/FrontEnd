@@ -1,0 +1,170 @@
+@import '../global/variables';
+@import '../global/mixin';
+@import '../global/mq';
+@import '../global/gray-to-white-card-section';
+@import '../global/social-connect';
+@import '../global/adhd-insights';
+@import '../global/tabs';
+
+.about-hero{
+    margin-top: -292px;
+    + section{
+        margin-top: -50px;
+    }
+    &.blog-category-hero
+    {
+        .hero-text
+        {
+            padding-top: 0;
+        }
+        + section
+        {
+            margin-top: -250px;
+            padding: 80px 0;
+            @include mq($until:desktop)
+            {
+                margin-top: -115px;
+            }
+        }
+    }
+   @include mq($until:wide){
+     margin-top: -120px;
+    + section{
+        margin-top: -45px;
+    }
+   }
+   @include mq($until:desktop){
+    margin-top: -120px;
+    + section{
+        margin-top: -30px;
+    }
+   }
+   @include mq($until:tablet){
+    margin-top: -50px;
+    padding-top: 0;
+    + section{
+        margin-top: -40px;
+    }
+   }
+   @include mq($until:mobileSmall){
+        margin-top: -30px;
+   }
+    .container{position: relative;}
+    .hero-text{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        @include flex;
+        @include flex-wrap;
+        @include justify-center;
+        @include align-content-center;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 80px;
+        max-width: 100%;
+        @include mq($until: desktop) {
+            padding-top: 60px;
+        }
+        @include mq($until: tablet) {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px;
+        }
+        h1{
+            width: 100%;
+        }
+        .subtext{
+            max-width: 580px;
+        }
+    }
+    .hero-image{
+        width: 100%;
+        .hero-img{
+            left: 50%;
+            margin: 0;
+            height: auto;
+            width: 1197px;
+            height: 1196px;
+            @include mq($until: wide) {
+                width: 930px;
+                height: 929px;
+            }
+            @include mq($until: desktop) {
+                //display: none;
+                width: 894px;
+                height: 894px;
+            }
+            @include mq($until:tablet){
+                width: 800px;
+                height: 800px;
+            }
+            @include mq($until:mobileSmall){
+                width: 750px;
+                height: 750px;
+            }
+        }
+    }
+}
+.adhd-recent-insignts
+{
+    background: $-white;
+    .tabs
+    {
+        margin-top: 60px;
+    }
+    .insight-wrapper
+    {
+        gap: 40px;
+        .insight-box
+        {
+            margin: 0;
+            text-align: left;
+            max-height: 420px;
+            min-height: 420px;
+            flex: 0 0 30.33%;
+            max-width: 100%;
+            // cursor: pointer;
+            color: $-secondary;
+            @include mq($until:desktop)
+            {
+                flex: 0 0 47%;
+            }
+            @include mq($until:tablet)
+            {
+                flex: 0 0 100%;
+            }
+            .d-flex
+            {
+                p
+                {
+                    margin-bottom: 0;
+                }
+            }
+            .label-tag
+            {
+                margin-bottom: 6px;
+                font-size: 15px;
+            }
+        }
+    }
+}
+.adhd-insights
+{
+    background-color: $-white;
+}
+.tab-wrapper>.tabs-nav
+{
+    @include mq($until:tablet)
+    {
+        flex-wrap: wrap;
+    }
+}
+
+
+.article-tags
+{
+    padding-top: 60px;
+}

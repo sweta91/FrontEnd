@@ -1,0 +1,19 @@
+
+.breadcrumbs
+{
+    z-index: 9;
+    position: relative;
+    li
+    {
+        display: inline-block;
+        font-size: 12px;
+        a
+        {
+            color: $-charcoal-60;
+            &:hover
+            {
+                color: $-secondary;
+            }
+        }
+    }
+}
